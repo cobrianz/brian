@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #0f0f0f; /* Deep canvas for premium positioning */
+    --color-foreground: #ffffff; /* Maximum readability for extended content */
+    --color-card: #252525; /* Card backgrounds with gentle separation */
+    --color-card-foreground: #ffffff; /* white */
+    --color-popover: #2d2d2d; /* Subtle surface elevation without distraction */
+    --color-popover-foreground: #ffffff; /* white */
+    --color-muted: #1a1a1a; /* Sophisticated foundation for technical content */
+    --color-muted-foreground: #a0a0a0; /* Clear hierarchy without harsh contrast */
+    
+    /* Border and Input Colors */
+    --color-border: rgba(255, 255, 255, 0.1); /* Minimal borders for form inputs */
+    --color-input: #252525; /* Card backgrounds with gentle separation */
+    --color-ring: #5271ff; /* Strategic focus for conversion moments */
+    
+    /* Brand Colors */
+    --color-primary: #5271ff; /* Strategic focus for conversion moments */
+    --color-primary-foreground: #ffffff; /* white */
+    --color-secondary: #2d2d2d; /* Subtle surface elevation without distraction */
+    --color-secondary-foreground: #ffffff; /* white */
+    --color-accent: #803f4a; /* Earthy sophistication reflecting African landscape heritage */
+    --color-accent-foreground: #ffffff; /* white */
+    
+    /* Status Colors */
+    --color-success: #22c55e; /* Positive project outcomes and confirmations */
+    --color-success-foreground: #ffffff; /* white */
+    --color-warning: #f59e0b; /* Important information without alarm */
+    --color-warning-foreground: #000000; /* black */
+    --color-error: #ef4444; /* Helpful guidance for form corrections */
+    --color-error-foreground: #ffffff; /* white */
+    --color-destructive: #ef4444; /* Helpful guidance for form corrections */
+    --color-destructive-foreground: #ffffff; /* white */
+    
+    /* Custom Brand Colors */
+    --color-brand-secondary: #803f4a; /* Earthy sophistication reflecting African landscape heritage */
+    --color-conversion-accent: #00ff88; /* High-energy green for call-to-action elements */
+    --color-cta-primary: #ff6b35; /* Energetic orange for primary conversion buttons */
+    --color-text-secondary: #a0a0a0; /* Clear hierarchy without harsh contrast */
+    --color-surface: #252525; /* Card backgrounds with gentle separation */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+  }
+  
+  .font-accent {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;
+  }
+  
+  .font-cta {
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+  }
+  
+  .font-medium {
+    font-weight: 500;
+  }
+  
+  .font-semibold {
+    font-weight: 600;
+  }
+  
+  .font-bold {
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .glass-morphism {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .gradient-border {
+    border: 1px solid;
+    border-image: linear-gradient(135deg, #5271ff, #803f4a) 1;
+  }
+  
+  .shadow-premium {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .shadow-premium-strong {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  .shadow-brand {
+    box-shadow: 0 20px 40px rgba(82, 113, 255, 0.15);
+  }
+  
+  .transition-smooth {
+    transition: all 0.3s ease-out;
+  }
+  
+  .transition-micro {
+    transition: all 0.2s ease-out;
+  }
+  
+  .hover-scale {
+    @apply transition-smooth hover:scale-105;
+  }
+  
+  .hover-glow {
+    @apply transition-smooth hover:shadow-brand;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .bg-gradient-brand {
+    background: linear-gradient(135deg, #5271ff, #803f4a);
+  }
+  
+  .bg-gradient-surface {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  }
+  
+  .cursor-custom {
+    cursor: none;
+  }
+  
+  .custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: rgba(82, 113, 255, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: screen;
+    transition: all 0.3s ease-out;
+  }
+  
+  .custom-cursor.hover {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Selection Styling */
+::selection {
+  background: rgba(82, 113, 255, 0.3);
+  color: var(--color-foreground);
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
