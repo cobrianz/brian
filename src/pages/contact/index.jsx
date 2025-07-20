@@ -148,7 +148,7 @@ const ContactProfessionalConnectionCenter = () => {
                       Send Email
                     </a>
                     <a
-                      href="tel:+254712345678"
+                      href="tel:+254702764907"
                       className="inline-flex items-center justify-center px-6 py-3 bg-white/10 text-white font-medium rounded-lg hover:bg-white/20 transition-colors duration-300 border border-white/20"
                     >
                       <Icon name="Phone" size={20} className="mr-2" />

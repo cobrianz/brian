@@ -15,7 +15,7 @@ const ContactInfo = () => {
       label: 'Phone',
       value: '+254 712 345 678',
       description: 'Available Mon-Fri, 9AM-6PM EAT',
-      href: 'tel:+254712345678'
+      href: 'tel:+254702764907'
     },
     {
       icon: 'MapPin',
