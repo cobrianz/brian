@@ -96,21 +96,35 @@ CERTIFICATIONS
   return (
     <>
       <Helmet>
-        <title>Resume - ATS-Optimized Career Documentation | Brian Cheruiyot</title>
-        <meta 
-          name="description" 
-          content="Comprehensive resume and career documentation for Brian Cheruiyot, Full-Stack Developer. Download PDF, ATS-compatible text version, or explore interactive resume with detailed project information." 
+        <title>
+          Resume - ATS-Optimized Career Documentation | Brian Cheruiyot
+        </title>
+        <meta
+          name="description"
+          content="Comprehensive resume and career documentation for Brian Cheruiyot, Full-Stack Developer. Download PDF, ATS-compatible text version, or explore interactive resume with detailed project information."
         />
-        <meta name="keywords" content="Brian Cheruiyot, Resume, Full-Stack Developer, React Developer, Node.js, JavaScript, Career Documentation, ATS Resume" />
-        <meta property="og:title" content="Resume - ATS-Optimized Career Documentation | Brian Cheruiyot" />
-        <meta property="og:description" content="Explore Brian Cheruiyot's professional resume with interactive features, downloadable formats, and comprehensive career documentation." />
+        <meta
+          name="keywords"
+          content="Brian Cheruiyot, Resume, Full-Stack Developer, React Developer, Node.js, JavaScript, Career Documentation, ATS Resume"
+        />
+        <meta
+          property="og:title"
+          content="Resume - ATS-Optimized Career Documentation | Brian Cheruiyot"
+        />
+        <meta
+          property="og:description"
+          content="Explore Brian Cheruiyot's professional resume with interactive features, downloadable formats, and comprehensive career documentation."
+        />
         <meta property="og:type" content="profile" />
-        <link rel="canonical" href="/resume-ats-optimized-career-documentation" />
+        <link
+          rel="canonical"
+          href="/resume-ats-optimized-career-documentation"
+        />
       </Helmet>
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background pt-20 pb-16">
         <Header />
-        
+
         <main className="pt-20 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Resume Header */}
@@ -128,7 +142,7 @@ CERTIFICATIONS
                 <ProfessionalSummary isInteractiveView={isInteractiveView} />
 
                 {/* Technical Skills */}
-                <TechnicalSkills 
+                <TechnicalSkills
                   isInteractiveView={isInteractiveView}
                   onSkillFilter={handleSkillFilter}
                 />
@@ -137,11 +151,13 @@ CERTIFICATIONS
                 <ProfessionalExperience isInteractiveView={isInteractiveView} />
 
                 {/* Education & Certifications */}
-                <EducationCertifications isInteractiveView={isInteractiveView} />
+                <EducationCertifications
+                  isInteractiveView={isInteractiveView}
+                />
 
                 {/* Notable Projects */}
                 <div id="projects-section">
-                  <NotableProjects 
+                  <NotableProjects
                     isInteractiveView={isInteractiveView}
                     filteredSkill={filteredSkill}
                   />
@@ -158,7 +174,8 @@ CERTIFICATIONS
             <div className="mt-16 pt-8 border-t border-border">
               <div className="text-center">
                 <p className="text-sm text-text-secondary mb-4">
-                  This resume is optimized for Applicant Tracking Systems (ATS) and human readers
+                  This resume is optimized for Applicant Tracking Systems (ATS)
+                  and human readers
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-text-secondary">
                   <span>Last Updated: July 2025</span>
