@@ -177,18 +177,6 @@ const ServicesPreview = () => {
                   </div>
                 </motion.div>
 
-                {/* Action Button */}
-                <div className="mt-4">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="w-full text-primary hover:bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
-                    iconName="ArrowRight"
-                    iconPosition="right"
-                  >
-                    Learn More
-                  </Button>
-                </div>
               </div>
             </motion.div>
           ))}

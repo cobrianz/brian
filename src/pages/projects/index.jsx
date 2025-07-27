@@ -80,6 +80,11 @@ const ProjectsPage = () => {
 The system architecture emphasizes scalability and performance, utilizing microservices for different business domains, Redis for caching, and AWS services for cloud infrastructure. The frontend delivers a seamless shopping experience with advanced search capabilities, personalized recommendations, and mobile-first responsive design.`,
       image:
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+      gallery: [
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      ],
       technologies: [
         "React",
         "Node.js",
@@ -176,6 +181,11 @@ const searchProducts = async (query, filters, page = 1) => {
 The project showcases advanced frontend techniques including virtual scrolling for large datasets, WebSocket integration for real-time updates, and sophisticated state management for complex user interactions. The design system ensures consistency across all components while maintaining accessibility standards.`,
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      gallery: [
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop",
+      ],
       technologies: [
         "React",
         "TypeScript",

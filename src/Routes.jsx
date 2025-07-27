@@ -1,13 +1,12 @@
 import React from "react";
 import { BrowserRouter, Routes as RouterRoutes, Route } from "react-router-dom";
 import ScrollToTop from "components/ScrollToTop";
-import ErrorBoundary from "components/ErrorBoundary";
 
 // Page components
 import Homepage from "pages/homepage";
 import Contact from "pages/contact";
 import Services from "pages/services";
-import Projectss from "pages/projects";
+import Projects from "pages/projects";
 import Resume from "pages/resume";
 import About from "pages/about";
 import NotFound from "pages/NotFound";
@@ -29,7 +28,7 @@ const Routes = () => {
           <Route path="/homepage" element={<Homepage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/projects" element={<Projectss />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
