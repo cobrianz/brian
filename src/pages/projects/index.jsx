@@ -73,17 +73,23 @@ const ProjectsPage = () => {
       title: "E-Commerce Platform Revolution",
       type: "Full-Stack Application",
       category: "fullstack",
-      description: "A comprehensive e-commerce solution built with React, Node.js, and MongoDB, featuring real-time inventory management, secure payment processing, and advanced analytics dashboard.",
+      description:
+        "A comprehensive e-commerce solution built with React, Node.js, and MongoDB, featuring real-time inventory management, secure payment processing, and advanced analytics dashboard.",
       fullDescription: `This project represents a complete overhaul of a traditional retail business's digital presence. The platform handles over 10,000 products across multiple categories with real-time inventory synchronization, automated order processing, and comprehensive customer relationship management.
 
 The system architecture emphasizes scalability and performance, utilizing microservices for different business domains, Redis for caching, and AWS services for cloud infrastructure. The frontend delivers a seamless shopping experience with advanced search capabilities, personalized recommendations, and mobile-first responsive design.`,
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-      gallery: [
+      image:
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+      technologies: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express",
+        "Tailwind CSS",
+        "Stripe",
+        "AWS",
+        "Redis",
       ],
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS", "Stripe", "AWS", "Redis"],
       duration: "4 months",
       teamSize: "3 developers",
       status: "Live",
@@ -97,7 +103,7 @@ The system architecture emphasizes scalability and performance, utilizing micros
         "Advanced analytics dashboard with sales forecasting",
         "Multi-vendor marketplace functionality",
         "Mobile-responsive design with PWA capabilities",
-        "Automated email marketing and customer segmentation"
+        "Automated email marketing and customer segmentation",
       ],
       architecture: `The application follows a microservices architecture with separate services for user management, product catalog, order processing, and payment handling. The frontend is built as a single-page application using React with Redux for state management, while the backend utilizes Node.js with Express framework and MongoDB for data persistence.`,
       codeSnippet: `// Advanced product search with filtering and pagination
@@ -116,70 +122,82 @@ const searchProducts = async (query, filters, page = 1) => {
         { label: "Page Load Time", value: "1.2s" },
         { label: "Conversion Rate", value: "3.8%" },
         { label: "Mobile Performance", value: "95/100" },
-        { label: "SEO Score", value: "98/100" }
+        { label: "SEO Score", value: "98/100" },
       ],
       challenges: [
         {
           title: "Real-time Inventory Synchronization",
-          description: "Managing inventory across multiple sales channels while preventing overselling required complex synchronization logic.",
-          solution: "Implemented event-driven architecture with Redis pub/sub for real-time updates and optimistic locking for concurrent transactions."
+          description:
+            "Managing inventory across multiple sales channels while preventing overselling required complex synchronization logic.",
+          solution:
+            "Implemented event-driven architecture with Redis pub/sub for real-time updates and optimistic locking for concurrent transactions.",
         },
         {
           title: "Payment Processing Security",
-          description: "Ensuring PCI compliance while maintaining smooth user experience for payment processing.",
-          solution: "Integrated Stripe with tokenization and implemented comprehensive fraud detection with machine learning algorithms."
-        }
+          description:
+            "Ensuring PCI compliance while maintaining smooth user experience for payment processing.",
+          solution:
+            "Integrated Stripe with tokenization and implemented comprehensive fraud detection with machine learning algorithms.",
+        },
       ],
       results: [
         {
           title: "Revenue Growth",
-          description: "Achieved 150% increase in online sales within 6 months of launch"
+          description:
+            "Achieved 150% increase in online sales within 6 months of launch",
         },
         {
           title: "User Engagement",
-          description: "Improved average session duration by 85% with enhanced user experience"
+          description:
+            "Improved average session duration by 85% with enhanced user experience",
         },
         {
           title: "Operational Efficiency",
-          description: "Reduced manual order processing time by 70% through automation"
-        }
+          description:
+            "Reduced manual order processing time by 70% through automation",
+        },
       ],
       testimonial: {
-        content: "Brian delivered an exceptional e-commerce platform that transformed our business. The attention to detail and technical expertise exceeded our expectations.",
+        content:
+          "Brian delivered an exceptional e-commerce platform that transformed our business. The attention to detail and technical expertise exceeded our expectations.",
         author: "Sarah Johnson",
-        role: "CEO, RetailTech Solutions"
-      }
+        role: "CEO, RetailTech Solutions",
+      },
     },
     {
       id: 2,
       title: "Real-Time Analytics Dashboard",
       type: "Frontend Showcase",
       category: "frontend",
-      description: "An interactive analytics dashboard built with React and D3.js, featuring real-time data visualization, customizable widgets, and advanced filtering capabilities.",
+      description:
+        "An interactive analytics dashboard built with React and D3.js, featuring real-time data visualization, customizable widgets, and advanced filtering capabilities.",
       fullDescription: `This dashboard serves as the central command center for a SaaS platform, providing real-time insights into user behavior, system performance, and business metrics. The interface adapts to different user roles, displaying relevant KPIs and actionable insights through intuitive visualizations.
 
 The project showcases advanced frontend techniques including virtual scrolling for large datasets, WebSocket integration for real-time updates, and sophisticated state management for complex user interactions. The design system ensures consistency across all components while maintaining accessibility standards.`,
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      gallery: [
+      image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop"
+      technologies: [
+        "React",
+        "TypeScript",
+        "D3.js",
+        "WebSocket",
+        "Tailwind CSS",
+        "Framer Motion",
       ],
-      technologies: ["React", "TypeScript", "D3.js", "WebSocket", "Tailwind CSS", "Framer Motion"],
       duration: "2 months",
       teamSize: "2 developers",
       status: "Live",
       rating: "4.8",
       impact: "+200%",
       liveUrl: "https://example-dashboard.com",
-      githubUrl: "https://github.com/briancheruiyot/analytics-dashboard",
+      githubUrl: "https://github.com/cobrianz/ACTITO-Realtime-dashboad",
       features: [
         "Real-time data visualization with WebSocket integration",
         "Customizable dashboard widgets with drag-and-drop functionality",
         "Advanced filtering and date range selection",
         "Export capabilities for reports and charts",
         "Role-based access control and personalized views",
-        "Mobile-responsive design with touch-friendly interactions"
+        "Mobile-responsive design with touch-friendly interactions",
       ],
       architecture: `The dashboard utilizes a component-based architecture with React and TypeScript for type safety. State management is handled through React Context and custom hooks, while D3.js powers the complex data visualizations. WebSocket connections provide real-time updates without polling.`,
       codeSnippet: `// Real-time chart component with WebSocket integration
@@ -204,46 +222,60 @@ const RealtimeChart = ({ metric, timeRange }) => {
         { label: "Data Processing", value: "10K/sec" },
         { label: "Chart Render Time", value: "50ms" },
         { label: "Memory Usage", value: "45MB" },
-        { label: "Bundle Size", value: "280KB" }
+        { label: "Bundle Size", value: "280KB" },
       ],
       challenges: [
         {
           title: "Real-time Performance Optimization",
-          description: "Handling thousands of data points per second while maintaining smooth 60fps animations.",
-          solution: "Implemented data throttling, virtual scrolling, and optimized D3.js rendering with canvas fallback for large datasets."
-        }
+          description:
+            "Handling thousands of data points per second while maintaining smooth 60fps animations.",
+          solution:
+            "Implemented data throttling, virtual scrolling, and optimized D3.js rendering with canvas fallback for large datasets.",
+        },
       ],
       results: [
         {
           title: "User Productivity",
-          description: "Increased data analysis efficiency by 200% through intuitive visualizations"
+          description:
+            "Increased data analysis efficiency by 200% through intuitive visualizations",
         },
         {
           title: "Decision Making Speed",
-          description: "Reduced time to insights from hours to minutes with real-time updates"
-        }
+          description:
+            "Reduced time to insights from hours to minutes with real-time updates",
+        },
       ],
       testimonial: {
-        content: "The dashboard Brian created has become indispensable for our operations team. The real-time insights have transformed how we make decisions.",
+        content:
+          "The dashboard Brian created has become indispensable for our operations team. The real-time insights have transformed how we make decisions.",
         author: "Michael Chen",
-        role: "CTO, DataFlow Inc"
-      }
+        role: "CTO, DataFlow Inc",
+      },
     },
     {
       id: 3,
       title: "Microservices API Gateway",
       type: "Backend Solution",
       category: "backend",
-      description: "A scalable API gateway built with Node.js and Express, featuring authentication, rate limiting, load balancing, and comprehensive monitoring.",
+      description:
+        "A scalable API gateway built with Node.js and Express, featuring authentication, rate limiting, load balancing, and comprehensive monitoring.",
       fullDescription: `This API gateway serves as the central entry point for a microservices architecture, handling authentication, authorization, rate limiting, and request routing. The system processes over 100,000 requests per day while maintaining sub-100ms response times.
 
 The architecture emphasizes reliability and scalability, with built-in circuit breakers, health checks, and automatic failover mechanisms. Comprehensive logging and monitoring provide real-time insights into system performance and help identify potential issues before they impact users.`,
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
       gallery: [
         "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop"
+        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop",
       ],
-      technologies: ["Node.js", "Express", "Redis", "PostgreSQL", "Docker", "Kubernetes"],
+      technologies: [
+        "Node.js",
+        "Express",
+        "Redis",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+      ],
       duration: "3 months",
       teamSize: "4 developers",
       status: "Live",
@@ -256,7 +288,7 @@ The architecture emphasizes reliability and scalability, with built-in circuit b
         "Intelligent load balancing with health checks",
         "Request/response transformation and validation",
         "Comprehensive API analytics and monitoring",
-        "Circuit breaker pattern for fault tolerance"
+        "Circuit breaker pattern for fault tolerance",
       ],
       architecture: `The gateway follows a plugin-based architecture allowing for easy extension of functionality. Core services include authentication, rate limiting, and routing, while plugins handle specific business logic. Redis provides caching and session storage, while PostgreSQL stores configuration and analytics data.`,
       codeSnippet: `// Intelligent rate limiting middleware
@@ -283,31 +315,36 @@ const rateLimiter = async (req, res, next) => {
         { label: "Requests/Day", value: "100K+" },
         { label: "Response Time", value: "85ms" },
         { label: "Uptime", value: "99.9%" },
-        { label: "Error Rate", value: "0.01%" }
+        { label: "Error Rate", value: "0.01%" },
       ],
       challenges: [
         {
           title: "High Availability Requirements",
-          description: "Ensuring 99.9% uptime while handling traffic spikes and service failures.",
-          solution: "Implemented circuit breakers, health checks, and automatic failover with Kubernetes orchestration."
-        }
+          description:
+            "Ensuring 99.9% uptime while handling traffic spikes and service failures.",
+          solution:
+            "Implemented circuit breakers, health checks, and automatic failover with Kubernetes orchestration.",
+        },
       ],
       results: [
         {
           title: "System Reliability",
-          description: "Achieved 99.9% uptime with automated failover and monitoring"
+          description:
+            "Achieved 99.9% uptime with automated failover and monitoring",
         },
         {
           title: "Performance Optimization",
-          description: "Reduced average API response time by 300% through intelligent caching"
-        }
+          description:
+            "Reduced average API response time by 300% through intelligent caching",
+        },
       ],
       testimonial: {
-        content: "Brian's API gateway solution has been rock-solid. The performance improvements and reliability have exceeded our expectations.",
+        content:
+          "Brian's API gateway solution has been rock-solid. The performance improvements and reliability have exceeded our expectations.",
         author: "David Rodriguez",
-        role: "Lead DevOps Engineer, TechCorp"
-      }
-    }
+        role: "Lead DevOps Engineer, TechCorp",
+      },
+    },
   ];
 
   // Featured project (first project in the list)
