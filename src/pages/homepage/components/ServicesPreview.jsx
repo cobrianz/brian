@@ -199,7 +199,7 @@ const ServicesPreview = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/services-technical-capability-showcase">
+              <Link to="/services">
                 <Button
                   variant="default"
                   size="lg"
@@ -211,7 +211,7 @@ const ServicesPreview = () => {
                 </Button>
               </Link>
               
-              <Link to="/contact-professional-connection-center">
+              <Link to="/contact">
                 <Button
                   variant="outline"
                   size="lg"

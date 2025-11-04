@@ -248,7 +248,7 @@ const AvailabilityStatus = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link to="/contact-professional-connection-center">
+              <Link to="/contact">
                 <Button
                   variant="ghost"
                   size="lg"
@@ -269,7 +269,8 @@ const AvailabilityStatus = () => {
               >
                 Schedule Call
               </Button>
-
+              <a href="/src/assets/Brian_Cheruiyot_Resume.pdf" download>
+              
               <Button
                 variant="ghost"
                 size="lg"
@@ -279,6 +280,7 @@ const AvailabilityStatus = () => {
               >
                 Download Resume
               </Button>
+              </a>
             </div>
 
             {/* Contact Methods */}

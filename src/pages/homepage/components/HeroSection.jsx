@@ -5,6 +5,7 @@ import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
 import Button from '../../../components/ui/Button';
 import profile from '../../../assets/about.jpg';
+import resume from '../../../assets/Brian_Cheruiyot_Resume.pdf'
 const HeroSection = () => {
   const [currentMetric, setCurrentMetric] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -154,16 +155,18 @@ const HeroSection = () => {
               </Link>
 
               {/* Resume Button */}
+              <a href={resume} download>
               <Button
                 variant="ghost"
                 size="lg"
                 className="w-fit text-xs sm:text-sm relative text-primary px-6 py-3 flex items-center gap-2 transition duration-300 hover:bg-transparent
-      before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-primary before:transition-all before:duration-300 hover:before:w-full"
+                before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-primary before:transition-all before:duration-300 hover:before:w-full"
                 iconName="Download"
                 iconPosition="left"
-              >
+                >
                 Resume
               </Button>
+                </a>
 
               {/* View Projects Button */}
               <Link to="/projects">

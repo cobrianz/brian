@@ -8,6 +8,7 @@ import TechnicalSkills from './components/TechnicalSkills';
 import ProfessionalExperience from './components/ProfessionalExperience';
 import EducationCertifications from './components/EducationCertifications';
 import NotableProjects from './components/NotableProjects';
+import resume from "../../assets/Brian_Cheruiyot_Resume.pdf"
 
 const ResumeATSOptimizedCareerDocumentation = () => {
   const [isInteractiveView, setIsInteractiveView] = useState(true);
@@ -17,15 +18,14 @@ const ResumeATSOptimizedCareerDocumentation = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleDownloadPDF = () => {
-    // Mock PDF download functionality
-    const link = document.createElement('a');
-    link.href = '/assets/resume/Brian_Cheruiyot_Resume.pdf';
-    link.download = 'Brian_Cheruiyot_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+const handleDownloadPDF = () => {
+  const link = document.createElement("a");
+  link.href = resume;
+  link.download = "Brian_Cheruiyot_Resume.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
   const handleDownloadText = () => {
     // Mock TXT download functionality

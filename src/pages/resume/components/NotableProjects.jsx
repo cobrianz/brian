@@ -8,6 +8,46 @@ const NotableProjects = ({ isInteractiveView, filteredSkill }) => {
   const projects = [
     {
       id: 1,
+      title: "Edubora Management System",
+      description:
+        "A comprehensive school management system supporting Kenya’s CBC and 8-4-4 curricula, with role-based access for admins, teachers, students, and parents.",
+      technologies: [
+        "Next.js",
+        "JavaScript",
+        "Tailwind CSS",
+        "Django REST API",
+        "MongoDB",
+      ],
+      duration: "4 months",
+      team: "1 developer",
+      role: "Full-Stack Developer",
+      impact: {
+        users: "500+",
+        efficiency: "150% increase",
+        schools: "5+ demo schools",
+      },
+      features: [
+        "Multi-tenant architecture for multiple schools",
+        "Role-based access control and routing",
+        "Secure login via school code, employee ID, or admission number",
+        "Responsive dashboards for admins, teachers, students, and parents",
+        "Curriculum support for Kenya’s CBC and 8-4-4 systems",
+        "Demo mode for UI testing without backend",
+      ],
+      challenges: [
+        "Implementing secure multi-tenant data isolation",
+        "Optimizing API performance for role-based dashboards",
+        "Ensuring responsive design across user roles",
+        "Integrating Django REST API with Next.js frontend",
+      ],
+      links: {
+        live: "https://edubora.netlify.app/",
+        github: "https://github.com/cobrianz/edubora",
+        demo: "https://edubora.netlify.app/",
+      },
+    },
+    {
+      id: 2,
       title: "IB Bank Liberia",
       description:
         "A modern banking platform with secure user authentication, account management, and transaction processing.",
@@ -48,7 +88,7 @@ const NotableProjects = ({ isInteractiveView, filteredSkill }) => {
       },
     },
     {
-      id: 2,
+      id: 3,
       title: "AnonMind",
       description:
         "A mental health platform providing anonymous support through AI-driven chat and resource sharing.",
@@ -88,7 +128,7 @@ const NotableProjects = ({ isInteractiveView, filteredSkill }) => {
       },
     },
     {
-      id: 3,
+      id: 4,
       title: "Actinova AI Tutor",
       description:
         "An AI-powered educational platform offering personalized learning with interactive content.",
@@ -121,7 +161,7 @@ const NotableProjects = ({ isInteractiveView, filteredSkill }) => {
       },
     },
     {
-      id: 4,
+      id: 5,
       title: "Beta Health",
       description:
         "A healthcare platform for managing patient records and appointments with HIPAA compliance.",
@@ -161,7 +201,7 @@ const NotableProjects = ({ isInteractiveView, filteredSkill }) => {
       },
     },
     {
-      id: 5,
+      id: 6,
       title: "Brianz Portfolio",
       description:
         "A personal portfolio showcasing projects and skills with a modern, responsive design.",
