@@ -38,7 +38,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
       {/* Custom Cursor */}
       <div
         className="fixed w-6 h-6 bg-primary/30 rounded-full pointer-events-none z-50 mix-blend-screen transition-all duration-300 ease-out"
@@ -49,9 +49,16 @@ const HeroSection = () => {
         }}
       />
 
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-muted to-background">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(82,113,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(82,113,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      {/* Background with Crescent Effect */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Brighter Glowing Crescent */}
+        <div className="absolute -top-[10%] -right-[10%] w-[75vw] h-[75vw] max-w-[850px] max-h-[850px] rounded-full border-[2.5rem] border-primary/30 border-t-transparent border-l-transparent -rotate-45 blur-md opacity-80" />
+        
+        {/* Primary Intense Glow */}
+        <div className="absolute top-[-25%] right-[-25%] w-[120%] h-[120%] bg-[radial-gradient(circle_at_80%_20%,rgba(82,113,255,0.15)_0%,transparent_70%)]" />
+        
+        {/* Secondary Soft Ambient Glow */}
+        <div className="absolute -bottom-[25%] -left-[25%] w-[120%] h-[120%] bg-[radial-gradient(circle_at_20%_80%,rgba(82,113,255,0.06)_0%,transparent_60%)]" />
       </div>
 
       {/* Floating Elements */}
