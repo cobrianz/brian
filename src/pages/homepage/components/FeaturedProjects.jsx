@@ -56,24 +56,24 @@ const FeaturedProjects = () => {
     },
     {
       id: 3,
-      title: "MediConnect - Healthcare Platform",
-      description: "A telemedicine platform connecting patients with healthcare providers, featuring appointment scheduling, video consultations, and medical record management.",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB", "WebRTC"],
+      title: "MedCore HMS",
+      description: "An Enterprise Healthcare Management Platform for modern healthcare facilities, managing patients, appointments, billing, pharmacy, and laboratory services.",
+      image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop",
+      technologies: ["Next.js", "TypeScript", "Node.js", "Express", "MongoDB"],
       category: "Healthcare Technology",
       impact: {
-        consultations: "25K+",
-        providers: "500+",
-        satisfaction: "96%"
+        efficiency: "180%",
+        accuracy: "99.9%",
+        uptime: "99.9%"
       },
       features: [
-        "HD video consultations",
-        "Secure medical records",
-        "Prescription management",
-        "Multi-language support"
+        "Comprehensive EMR/EHR system",
+        "Advanced Appointment Scheduling",
+        "Pharmacy & Drug Management",
+        "Automated Billing System"
       ],
-      liveUrl: "https://mediconnect-health.com",
-      githubUrl: "https://github.com/briancheruiyot/mediconnect",
+      liveUrl: "https://medcore-chi.vercel.app/",
+      githubUrl: "https://github.com/cobrianz/medcore",
       status: "Live Production"
     },
     {

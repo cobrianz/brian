@@ -233,6 +233,47 @@ const NotableProjects = ({ isInteractiveView, filteredSkill }) => {
         demo: "https://briancheruiyot.netlify.app/",
       },
     },
+    {
+      id: 7,
+      title: "MedCore HMS",
+      description:
+        "An Enterprise Healthcare Management Platform for modern healthcare facilities, managing patients, appointments, billing, pharmacy, and laboratory services.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "Express",
+        "MongoDB",
+      ],
+      duration: "5 months",
+      team: "1 developer",
+      role: "Full-Stack Developer",
+      impact: {
+        efficiency: "180% increase",
+        accuracy: "99.9%",
+        uptime: "99.9%",
+      },
+      features: [
+        "Comprehensive EMR/EHR system",
+        "Advanced Appointment Scheduling (OPD/IPD)",
+        "Pharmacy & Drug Inventory Management",
+        "Laboratory Information System (LIS)",
+        "Automated Billing and Finance tracking",
+        "Role-based dashboards",
+      ],
+      challenges: [
+        "Managing complex medical data structures",
+        "Implementing secure role-based access control",
+        "Ensuring high system availability",
+        "Optimizing billing and pharmacy workflows",
+      ],
+      links: {
+        live: "https://medcore-chi.vercel.app/",
+        github: "https://github.com/cobrianz/medcore",
+        demo: "https://medcore-chi.vercel.app/",
+      },
+    },
   ];
 
   const filteredProjects = filteredSkill

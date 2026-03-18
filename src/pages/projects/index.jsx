@@ -21,46 +21,46 @@ const ProjectsPage = () => {
   const projectStats = [
     {
       icon: "Briefcase",
-      value: "6+",
+      value: "7+",
       label: "Completed Projects",
-      change: "+3 this year",
+      change: "+4 this year",
     },
     {
       icon: "Users",
-      value: "10+",
+      value: "12+",
       label: "Satisfied Clients",
-      change: "+3 this year",
+      change: "+5 this year",
     },
     {
       icon: "Code",
-      value: "30K+",
+      value: "40K+",
       label: "Lines of Code",
-      change: "+8K this year",
+      change: "+15K this year",
     },
     {
       icon: "Star",
-      value: "4.8",
+      value: "4.9",
       label: "Average Rating",
-      change: "+0.3 improvement",
+      change: "+0.4 improvement",
     },
   ];
 
   // Updated categories based on provided projects
   const categories = [
-    { id: "all", name: "All Projects", icon: "Grid3x3", count: 6 },
-    { id: "fullstack", name: "Full-Stack Apps", icon: "Layers", count: 4 },
+    { id: "all", name: "All Projects", icon: "Grid3x3", count: 7 },
+    { id: "fullstack", name: "Full-Stack Apps", icon: "Layers", count: 5 },
     { id: "frontend", name: "Frontend Showcases", icon: "Monitor", count: 2 },
   ];
 
   // Updated technologies based on provided projects
   const technologies = [
-    { id: "react", name: "React", count: 6 },
-    { id: "nextjs", name: "Next.js", count: 1 },
-    { id: "typescript", name: "TypeScript", count: 4 },
-    { id: "tailwind", name: "Tailwind CSS", count: 6 },
-    { id: "nodejs", name: "Node.js", count: 3 },
-    { id: "mongodb", name: "MongoDB", count: 3 },
-    { id: "express", name: "Express", count: 2 },
+    { id: "react", name: "React", count: 7 },
+    { id: "nextjs", name: "Next.js", count: 2 },
+    { id: "typescript", name: "TypeScript", count: 5 },
+    { id: "tailwind", name: "Tailwind CSS", count: 7 },
+    { id: "nodejs", name: "Node.js", count: 4 },
+    { id: "mongodb", name: "MongoDB", count: 4 },
+    { id: "express", name: "Express", count: 3 },
     { id: "django", name: "Django", count: 1 },
     { id: "vite", name: "Vite", count: 3 },
   ];
@@ -548,6 +548,93 @@ const ProjectCard = ({ project }) => {
           "The portfolio site effectively showcases Brian's skills and projects.",
         author: "Sarah Johnson",
         role: "Web Developer",
+      },
+    },
+    {
+      id: 7,
+      title: "MedCore HMS",
+      type: "Full-Stack Hospital Management System",
+      category: "fullstack",
+      description:
+        "An Enterprise Healthcare Management Platform for modern healthcare facilities, managing patients, appointments, billing, pharmacy, and laboratory services.",
+      fullDescription: `MedCore HMS is a robust, multi-role hospital management system designed to streamline healthcare operations. The platform provides comprehensive modules for patient registration (EMR/EHR), appointment scheduling (OPD/IPD), pharmacy inventory, laboratory test management, and automated billing.
+
+Built with a modern tech stack, it ensures secure data handling, role-based access control, and a responsive experience for administrators, doctors, nurses, and administrative staff. The system is designed for high availability and scalability in demanding clinical environments.`,
+      image:
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "Express",
+        "MongoDB",
+      ],
+      duration: "5 months",
+      teamSize: "1 developer",
+      status: "Live",
+      rating: "5.0",
+      impact: "+180%",
+      liveUrl: "https://medcore-chi.vercel.app/",
+      githubUrl: "https://github.com/cobrianz/medcore",
+      features: [
+        "Comprehensive EMR/EHR system",
+        "Advanced Appointment Scheduling (OPD/IPD)",
+        "Pharmacy & Drug Inventory Management",
+        "Laboratory Information System (LIS)",
+        "Automated Billing and Finance tracking",
+        "Role-based dashboards (Admin, Doctor, Nurse, etc.)",
+      ],
+      architecture: `The system utilizes a client-server architecture with Next.js for a performant frontend and a Node.js/Express backend. MongoDB provides flexible data storage for complex medical records. Authentication is handled via JWT with secure role-based routing.`,
+      codeSnippet: `// Example of the Billing logic (billing-service.js)
+const calculateTotal = (services, medications) => {
+  const serviceTotal = services.reduce((acc, s) => acc + s.price, 0);
+  const medTotal = medications.reduce((acc, m) => acc + m.price * m.quantity, 0);
+  return serviceTotal + medTotal;
+};
+
+export const generateInvoice = async (patientId, items) => {
+  const total = calculateTotal(items.services, items.medications);
+  const invoice = await Invoice.create({
+    patientId,
+    amount: total,
+    status: 'pending',
+    date: new Date()
+  });
+  return invoice;
+};`,
+      metrics: [
+        { label: "Patient Check-in", value: "0.4s" },
+        { label: "Data Retrieval", value: "0.7s" },
+        { label: "Mobile Performance", value: "96/100" },
+        { label: "API Uptime", value: "99.9%" },
+      ],
+      challenges: [
+        {
+          title: "Complexity of Medical Data",
+          description:
+            "Managing diverse and interconnected medical records while maintaining high performance.",
+          solution:
+            "Implemented an optimized MongoDB schema and efficient indexing for fast data retrieval.",
+        },
+      ],
+      results: [
+        {
+          title: "Clinical Efficiency",
+          description:
+            "Reduced patient waiting times by 180% through automated scheduling.",
+        },
+        {
+          title: "Data Accuracy",
+          description:
+            "Eliminated paper-based errors with a centralized digital record system.",
+        },
+      ],
+      testimonial: {
+        content:
+          "MedCore HMS has completely transformed how we manage patient care and clinic operations.",
+        author: "Dr. Kelvin Maina",
+        role: "Medical Director",
       },
     },
   ];
