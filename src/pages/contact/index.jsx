@@ -1,185 +1,160 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import Header from '../../components/ui/Header';
-import ContactInfo from './components/ContactInfo';
-import AvailabilityStatus from './components/AvailabilityStatus';
-import ContactForm from './components/ContactForm';
-import SocialLinks from './components/SocialLinks';
-import CalendarIntegration from './components/CalendarIntegration';
-import LocationContext from './components/LocationContext';
-import Icon from '../../components/AppIcon';
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import Header from "../../components/ui/Header";
+import Button from "../../components/ui/Button";
+import Icon from "../../components/AppIcon";
 
-const ContactProfessionalConnectionCenter = () => {
+const contactMethods = [
+  {
+    label: "Email",
+    value: "briancheruiyot022@gmail.com",
+    detail: "Best for roles, project briefs, and formal inquiries",
+    href: "mailto:briancheruiyot022@gmail.com",
+    icon: "Mail",
+  },
+  {
+    label: "Phone",
+    value: "+254 702 764 907",
+    detail: "Available for direct discussion when scheduled in advance",
+    href: "tel:+254702764907",
+    icon: "Phone",
+  },
+  {
+    label: "GitHub",
+    value: "github.com/cobrianz",
+    detail: "Code samples, portfolio projects, and implementation references",
+    href: "https://github.com/cobrianz",
+    icon: "Github",
+  },
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/brian-cheruiyot",
+    detail: "Professional background and career-focused contact",
+    href: "https://linkedin.com/in/brian-cheruiyot",
+    icon: "Linkedin",
+  },
+];
+
+const ContactPage = () => {
   useEffect(() => {
-    document.title = 'Contact - Professional Connection Center | Brian Cheruiyot Portfolio';
+    document.title = "Contact | Brian Cheruiyot";
     window.scrollTo(0, 0);
   }, []);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 }
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
-      <main className="pt-20 lg:pt-24">
-        {/* Hero Section */}
-        <motion.section
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-          className="py-12 lg:py-20"
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div variants={itemVariants} className="text-center mb-12 lg:mb-16">
-              <div className="flex items-center justify-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-brand rounded-xl flex items-center justify-center shadow-brand">
-                  <Icon name="MessageCircle" size={24} className="text-white" />
-                </div>
-                <h1 className="text-3xl lg:text-5xl font-bold text-foreground">
-                  Let's Connect
-                </h1>
-              </div>
-              <p className="text-lg lg:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-                Ready to discuss your next project? I'm here to help bring your ideas to life with 
-                cutting-edge technology and creative solutions. Multiple ways to reach out, 
-                tailored to your preferred communication style.
-              </p>
-            </motion.div>
 
-            {/* Quick Stats */}
-            <motion.div variants={itemVariants} className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-              {[
-                { label: 'Response Time', value: '< 24hrs', icon: 'Clock' },
-                { label: 'Projects Completed', value: '50+', icon: 'CheckCircle' },
-                { label: 'Client Satisfaction', value: '100%', icon: 'Star' },
-                { label: 'Time Zone', value: 'GMT+3', icon: 'Globe' }
-              ].map((stat, index) => (
-                <div key={index} className="bg-card rounded-lg p-4 text-center shadow-premium">
-                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                    <Icon name={stat.icon} size={16} className="text-primary" />
+      <main className="px-4 pb-24 pt-10 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <section className="relative overflow-hidden rounded-[20px] border border-border bg-white p-8 md:p-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
+            >
+              <div className="border-b border-border pb-8">
+                <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+                  <div className="max-w-2xl">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-text-secondary">Contact</p>
+                    <h1 className="mt-4 text-4xl font-bold text-foreground">Professional inquiries and project conversations.</h1>
+                    <p className="mt-5 text-sm leading-8 text-text-secondary">
+                      Available for remote roles, contract work, and product-focused frontend or full-stack opportunities. The best outreach is direct, clear, and specific about the role or project scope.
+                    </p>
                   </div>
-                  <div className="text-xl font-bold text-foreground">{stat.value}</div>
-                  <div className="text-xs text-text-secondary">{stat.label}</div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </motion.section>
 
-        {/* Main Content Grid */}
-        <motion.section
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-          className="pb-20"
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Left Column */}
-              <div className="space-y-8">
-                <motion.div variants={itemVariants}>
-                  <ContactInfo />
-                </motion.div>
-                
-                <motion.div variants={itemVariants}>
-                  <AvailabilityStatus />
-                </motion.div>
-                
-                <motion.div variants={itemVariants}>
-                  <SocialLinks />
-                </motion.div>
-              </div>
-
-              {/* Right Column */}
-              <div className="space-y-8">
-                <motion.div variants={itemVariants}>
-                  <ContactForm />
-                </motion.div>
-              </div>
-            </div>
-
-            {/* Full Width Sections */}
-            <div className="mt-12 space-y-8">
-              <motion.div variants={itemVariants}>
-                <CalendarIntegration />
-              </motion.div>
-              
-              <motion.div variants={itemVariants}>
-                <LocationContext />
-              </motion.div>
-            </div>
-
-            {/* Call to Action */}
-            <motion.div variants={itemVariants} className="mt-16 text-center">
-              <div className="bg-gradient-brand rounded-2xl p-8 lg:p-12 shadow-premium-strong">
-                <div className="max-w-3xl mx-auto">
-                  <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                    Ready to Start Your Project?
-                  </h2>
-                  <p className="text-white/90 text-lg mb-6">
-                    Whether you're a startup looking for a technical co-founder, an agency needing 
-                    a reliable development partner, or a company seeking to modernize your digital presence, 
-                    I'm here to help you succeed.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a
-                      href="mailto:briancheruiyot022@gmail.com"
-                      className="inline-flex items-center justify-center px-6 py-3 bg-white text-primary font-medium rounded-lg hover:bg-gray-100 transition-colors duration-300"
-                    >
-                      <Icon name="Mail" size={20} className="mr-2 " />
-                      Send Email
-                    </a>
-                    <a
-                      href="tel:+254702764907"
-                      className="inline-flex items-center justify-center px-6 py-3 bg-white/10 text-white font-medium rounded-lg hover:bg-white/20 transition-colors duration-300 border border-white/20"
-                    >
-                      <Icon name="Phone" size={20} className="mr-2" />
-                      Call Now
-                    </a>
+                  <div className="space-y-2 text-sm text-text-secondary lg:text-right">
+                    <div>Nairobi, Kenya</div>
+                    <div>Remote and contract friendly</div>
+                    <div>Typical response: within 24 hours</div>
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </div>
-        </motion.section>
-      </main>
 
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between">
-            <div className="flex items-center space-x-3 mb-4 sm:mb-0">
-              <div className="w-8 h-8 bg-gradient-brand rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">BC</span>
+              <div className="grid gap-10 pt-8 lg:grid-cols-[1.1fr_0.9fr]">
+                <section>
+                  <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-text-secondary">Direct Contact Methods</h2>
+                  <div className="mt-5 space-y-4">
+                    {contactMethods.map((method, index) => (
+                      <motion.a
+                        key={method.label}
+                        href={method.href}
+                        target={method.href.startsWith("http") ? "_blank" : undefined}
+                        rel={method.href.startsWith("http") ? "noreferrer" : undefined}
+                        initial={{ opacity: 0, y: 12 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.35, delay: index * 0.05 }}
+                        className="block rounded-[16px] border border-border bg-background/60 p-5 transition-colors hover:border-primary/40"
+                      >
+                        <div className="flex items-start gap-4">
+                          <div className="rounded-[14px] bg-primary/12 p-3 text-primary">
+                            <Icon name={method.icon} size={18} />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-center justify-between gap-3">
+                              <p className="text-sm font-semibold text-foreground">{method.label}</p>
+                              <Icon name="ArrowUpRight" size={16} className="text-text-secondary" />
+                            </div>
+                            <p className="mt-2 break-all text-base font-medium text-foreground">{method.value}</p>
+                            <p className="mt-2 text-sm leading-7 text-text-secondary">{method.detail}</p>
+                          </div>
+                        </div>
+                      </motion.a>
+                    ))}
+                  </div>
+                </section>
+
+                <aside className="space-y-8">
+                  <section>
+                    <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-text-secondary">Best First Message</h2>
+                    <div className="mt-5 rounded-[16px] border border-border bg-[#f5fff6] p-5">
+                      <p className="text-sm leading-7 text-foreground">
+                        Include the role or project type, timeline, expected responsibilities, and whether the need is full-time, freelance, or short-term contract.
+                      </p>
+                    </div>
+                  </section>
+
+                  <section>
+                    <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-text-secondary">Availability</h2>
+                    <div className="mt-5 space-y-3">
+                      {[
+                        "Open to remote opportunities",
+                        "Available for contract and project work",
+                        "Frontend-heavy roles are the best fit",
+                        "Can support full-stack implementation where needed",
+                      ].map((item) => (
+                        <div key={item} className="flex gap-3 rounded-[16px] border border-border bg-white px-4 py-3">
+                          <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-primary" />
+                          <span className="text-sm leading-7 text-foreground">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+
+                  <section>
+                    <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-text-secondary">Preferred Contact</h2>
+                    <div className="mt-5 flex flex-col gap-3">
+                      <a href="mailto:briancheruiyot022@gmail.com">
+                        <Button className="w-full rounded-[18px]" iconName="Mail" iconPosition="left">
+                          Email Directly
+                        </Button>
+                      </a>
+                      <a href="https://linkedin.com/in/brian-cheruiyot" target="_blank" rel="noreferrer">
+                        <Button variant="outline" className="w-full rounded-[18px]" iconName="Linkedin" iconPosition="left">
+                          Message on LinkedIn
+                        </Button>
+                      </a>
+                    </div>
+                  </section>
+                </aside>
               </div>
-              <span className="text-foreground font-medium">Brian Cheruiyot</span>
-            </div>
-            <div className="text-sm text-text-secondary">
-              © {new Date().getFullYear()} Brian Cheruiyot. All rights reserved.
-            </div>
-          </div>
+            </motion.div>
+          </section>
         </div>
-      </footer>
+      </main>
     </div>
   );
 };
 
-export default ContactProfessionalConnectionCenter;
+export default ContactPage;

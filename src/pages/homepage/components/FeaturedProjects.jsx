@@ -148,9 +148,7 @@ const FeaturedProjects = () => {
           
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Projects That{' '}
-            <span className="bg-gradient-brand bg-clip-text text-transparent">
-              Drive Impact
-            </span>
+            <span className="text-primary">Drive Impact</span>
           </h2>
           
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
@@ -202,7 +200,7 @@ const FeaturedProjects = () => {
                 <div className="absolute top-1/2 -translate-y-1/2 -left-4">
                   <button
                     onClick={prevProject}
-                    className="w-12 h-12 bg-surface/90 backdrop-blur-sm border border-border rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-premium"
+                    className="w-12 h-12 bg-surface backdrop-blur-sm border border-border rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-premium"
                   >
                     <Icon name="ChevronLeft" size={20} />
                   </button>
@@ -211,7 +209,7 @@ const FeaturedProjects = () => {
                 <div className="absolute top-1/2 -translate-y-1/2 -right-4">
                   <button
                     onClick={nextProject}
-                    className="w-12 h-12 bg-surface/90 backdrop-blur-sm border border-border rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-premium"
+                    className="w-12 h-12 bg-surface backdrop-blur-sm border border-border rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-premium"
                   >
                     <Icon name="ChevronRight" size={20} />
                   </button>
@@ -228,15 +226,7 @@ const FeaturedProjects = () => {
                   {currentProjectData.description}
                 </p>
 
-                {/* Impact Metrics */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  {Object.entries(currentProjectData.impact).map(([key, value]) => (
-                    <div key={key} className="text-center">
-                      <div className="text-2xl font-bold text-primary">{value}</div>
-                      <div className="text-sm text-text-secondary capitalize">{key}</div>
-                    </div>
-                  ))}
-                </div>
+                {/* Removed: Impact metrics (kept the story + features focused) */}
 
                 {/* Technologies */}
                 <div className="mb-6">

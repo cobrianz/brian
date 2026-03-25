@@ -69,6 +69,7 @@ module.exports = {
         'cta-primary': "var(--color-cta-primary)", /* Energetic orange for primary conversion buttons */
         'text-secondary': "var(--color-text-secondary)", /* Clear hierarchy without harsh contrast */
         'surface': "var(--color-surface)", /* Card backgrounds with gentle separation */
+        'navbar': "var(--color-navbar)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -76,6 +77,12 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
+        // Semantic typography tokens
+        'heading': ['Bricolage Grotesque', 'sans-serif'],
+        'body': ['Jost', 'sans-serif'],
+        'mono': ['JetBrains Mono', 'monospace'],
+
+        // Back-compat keys already used in the codebase
         'jost': ['Jost', 'sans-serif'],
         'dancing': ['Dancing Script', 'cursive'],
         'sans': ['Jost', 'sans-serif'],
@@ -141,8 +148,8 @@ module.exports = {
           "50%": { transform: "translateY(-10px)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(82, 113, 255, 0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(82, 113, 255, 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(34, 197, 94, 0.3)" },
+          "50%": { boxShadow: "0 0 40px rgba(34, 197, 94, 0.6)" },
         },
         "gradient-shift": {
           "0%, 100%": { backgroundPosition: "0% 50%" },
@@ -152,15 +159,24 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-brand': 'linear-gradient(135deg, #5271ff, #803f4a)',
+        'gradient-brand': 'linear-gradient(135deg, #22c55e, #15803d)',
         'gradient-surface': 'linear-gradient(135deg, #1a1a1a, #2d2d2d)',
       },
       boxShadow: {
-        'premium': '0 4px 20px rgba(0, 0, 0, 0.3)',
-        'premium-strong': '0 8px 40px rgba(0, 0, 0, 0.4)',
-        'brand': '0 20px 40px rgba(82, 113, 255, 0.15)',
-        'glow': '0 0 20px rgba(82, 113, 255, 0.3)',
-        'glow-strong': '0 0 40px rgba(82, 113, 255, 0.6)',
+        // Flatten all shadows across the UI
+        'none': 'none',
+        'sm': 'none',
+        'DEFAULT': 'none',
+        'md': 'none',
+        'lg': 'none',
+        'xl': 'none',
+        '2xl': 'none',
+        'inner': 'none',
+        'premium': 'none',
+        'premium-strong': 'none',
+        'brand': 'none',
+        'glow': 'none',
+        'glow-strong': 'none',
       },
       transitionTimingFunction: {
         'smooth': 'cubic-bezier(0.25, 1, 0.5, 1)',

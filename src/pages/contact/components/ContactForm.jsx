@@ -409,7 +409,7 @@ const ContactForm = () => {
           disabled={isSubmitting}
           iconName="Send"
           iconPosition="right"
-          className="bg-[#1c421c] text-green-500 rounded-full px-5 py-2.5 flex items-center gap-2 transition duration-300 hover:brightness-110 shadow-inner border border-green-900/10 hover:bg-[#265226]"
+        className="bg-primary/10 text-primary rounded-full px-5 py-2.5 flex items-center gap-2 transition duration-300 hover:bg-primary/20 shadow-inner border border-primary/20"
         >
           {isSubmitting ? "Sending Message..." : "Send Message"}
         </Button>

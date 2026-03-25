@@ -1,119 +1,162 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import Header from '../../components/ui/Header';
-import HeroSection from './components/HeroSection';
-import ServicesPreview from './components/ServicesPreview';
-import FeaturedProjects from './components/FeaturedProjects';
-import AvailabilityStatus from './components/AvailabilityStatus';
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import Header from "../../components/ui/Header";
+import HeroSection from "./components/HeroSection";
+import Button from "../../components/ui/Button";
+import Icon from "../../components/AppIcon";
 
-const HomepagePremiumDeveloperPortfolio = () => {
+const featuredProjects = [
+  {
+    title: "Edubora Management System",
+    summary:
+      "A school management platform designed around real administrative workflows, role-based access, and reliable day-to-day operations.",
+    stack: ["Next.js", "Tailwind CSS", "Django REST API", "MongoDB"],
+    liveUrl: "https://edubora.netlify.app/",
+    codeUrl: "https://github.com/cobrianz/edubora",
+  },
+  {
+    title: "IB Bank Liberia",
+    summary:
+      "A banking experience built for secure account flows, responsive interfaces, and clear customer interactions across devices.",
+    stack: ["React", "TypeScript", "Node.js", "Express"],
+    liveUrl: "https://ib-bankliberia.netlify.app/",
+    codeUrl: "https://github.com/cobrianz/Ib-bank",
+  },
+  {
+    title: "Actinova AI Tutor",
+    summary:
+      "An AI-powered learning product focused on usable interaction design, guided content, and modern frontend execution.",
+    stack: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    liveUrl: "https://actinovaraitutor.netlify.app/",
+    codeUrl: "https://github.com/cobrianz/actinova-ai-tutor",
+  },
+];
+
+const Homepage = () => {
   useEffect(() => {
-    // Scroll to top on component mount
     window.scrollTo(0, 0);
-    
-    // Set page title
-    document.title = 'Brian Cheruiyot - Premium Developer Portfolio | Full-Stack Developer';
-    
-    // Set meta description
+    document.title = "Brian Cheruiyot | Full-Stack Developer";
+
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Brian Cheruiyot - Globally competitive African tech talent specializing in React, Node.js, and modern web technologies. Building scalable solutions that drive real business impact.');
+      metaDescription.setAttribute(
+        "content",
+        "Brian Cheruiyot is a full-stack developer building polished React and Node.js products with a strong focus on usability, performance, and business value."
+      );
     }
   }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="min-h-screen bg-background text-foreground"
-    >
-      {/* Header */}
+    <div className="min-h-screen bg-background text-foreground">
       <Header />
 
-      {/* Main Content */}
-      <main className="relative">
-        {/* Hero Section */}
+      <main>
         <HeroSection />
 
-        {/* Services Preview Section */}
-        <ServicesPreview />
-
-        {/* Featured Projects Section */}
-        <FeaturedProjects />
-
-        {/* Availability Status Section */}
-        <AvailabilityStatus />
-
-        {/* Footer */}
-        <footer className="bg-muted border-t border-border py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-3 gap-8 items-center">
-              {/* Brand */}
-              <div className="text-center md:text-left">
-                <div className="flex items-center justify-center md:justify-start space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-gradient-brand rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">BC</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-foreground">Brian Cheruiyot</h3>
-                    <p className="text-sm text-text-secondary font-accent">Portfolio Pro</p>
-                  </div>
-                </div>
-                <p className="text-sm text-text-secondary max-w-xs mx-auto md:mx-0">
-                  Building the future of web development, one project at a time.
-                </p>
+        <section className="relative overflow-hidden py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <div className="max-w-3xl">
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-text-secondary">Selected work</p>
+                <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
+                  Projects that show product range and implementation quality.
+                </h2>
               </div>
-
-              {/* Quick Links */}
-              <div className="text-center">
-                <h4 className="font-medium text-foreground mb-4">Quick Links</h4>
-                <div className="space-y-2">
-                  <div className="text-sm text-text-secondary hover:text-primary transition-colors duration-300 cursor-pointer">
-                    About Me
-                  </div>
-                  <div className="text-sm text-text-secondary hover:text-primary transition-colors duration-300 cursor-pointer">
-                    Services
-                  </div>
-                  <div className="text-sm text-text-secondary hover:text-primary transition-colors duration-300 cursor-pointer">
-                    Projects
-                  </div>
-                  <div className="text-sm text-text-secondary hover:text-primary transition-colors duration-300 cursor-pointer">
-                    Contact
-                  </div>
-                </div>
-              </div>
-
-              {/* Contact Info */}
-              <div className="text-center md:text-right">
-                <h4 className="font-medium text-foreground mb-4">Get In Touch</h4>
-                <div className="space-y-2">
-                  <div className="text-sm text-text-secondary">brian@portfolio.dev</div>
-                  <div className="text-sm text-text-secondary">+254 702 764 907</div>
-                  <div className="text-sm text-text-secondary">Nairobi, Kenya</div>
-                </div>
-              </div>
+              <Link to="/projects" className="text-sm font-medium text-primary">
+                View all projects
+              </Link>
             </div>
 
-            {/* Bottom Bar */}
-            <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-              <div className="text-sm text-text-secondary mb-4 md:mb-0">
-                © {new Date().getFullYear()} Brian Cheruiyot. All rights reserved.
-              </div>
-              <div className="flex space-x-6">
-                <div className="text-sm text-text-secondary hover:text-primary transition-colors duration-300 cursor-pointer">
-                  Privacy Policy
+            <div className="grid gap-6 lg:grid-cols-3">
+              {featuredProjects.map((project, index) => (
+                <motion.article
+                  key={project.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{ duration: 0.45, delay: index * 0.08 }}
+                  className="portfolio-panel flex h-full flex-col p-7"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-primary">
+                      Featured
+                    </span>
+                    <Icon name="ArrowUpRight" size={18} className="text-text-secondary" />
+                  </div>
+
+                  <h3 className="mt-6 text-2xl font-bold text-foreground">{project.title}</h3>
+                  <p className="mt-4 flex-1 text-sm leading-7 text-text-secondary">{project.summary}</p>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.stack.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-border bg-background/75 px-3 py-1 text-sm text-foreground"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-8 flex gap-3">
+                    <a href={project.liveUrl} target="_blank" rel="noreferrer">
+                      <Button className="rounded-full" iconName="ExternalLink" iconPosition="right">
+                        Live
+                      </Button>
+                    </a>
+                    <a href={project.codeUrl} target="_blank" rel="noreferrer">
+                      <Button variant="outline" className="rounded-full" iconName="Github" iconPosition="left">
+                        Code
+                      </Button>
+                    </a>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="relative overflow-hidden pb-24 pt-12">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="rounded-[24px] border border-border bg-[#f4fff5] px-6 py-10 lg:px-10">
+              <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                <div className="max-w-2xl">
+                  <p className="text-sm font-medium uppercase tracking-[0.2em] text-text-secondary">Open to opportunities</p>
+                  <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">If you need polished execution, strong frontend work, and dependable follow-through, let's talk.</h2>
+                  <p className="mt-4 text-base leading-7 text-text-secondary">
+                    Available for product teams, contract work, and roles where frontend quality matters.
+                  </p>
                 </div>
-                <div className="text-sm text-text-secondary hover:text-primary transition-colors duration-300 cursor-pointer">
-                  Terms of Service
+
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <Link to="/contact">
+                    <Button
+                      size="lg"
+                      className="rounded-[18px] px-7"
+                      iconName="MessageCircle"
+                      iconPosition="left"
+                    >
+                      Start a conversation
+                    </Button>
+                  </Link>
+                  <Link to="/resume">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="rounded-[18px] border-border bg-background/70 px-7 text-foreground hover:bg-background"
+                    >
+                      View resume
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
-        </footer>
+        </section>
       </main>
-    </motion.div>
+    </div>
   );
 };
 
-export default HomepagePremiumDeveloperPortfolio;
+export default Homepage;

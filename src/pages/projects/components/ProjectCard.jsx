@@ -8,21 +8,49 @@ import Button from "../../../components/ui/Button";
 
 const ProjectCard = ({ project, onViewDetails }) => {
   if (!project) return null;
+
+  const mockUrl =
+    project.liveUrl ||
+    project.githubUrl ||
+    `${(project.title || "project").toLowerCase().replace(/\s+/g, "-")}.app`;
+
   return (
     <motion.div
-      className="bg-card rounded-xl shadow-premium overflow-hidden flex flex-col"
+      className="card-surface overflow-hidden flex flex-col"
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
     >
-      <div className="relative h-48">
-        <Image
-          src={project.image}
-          alt={`${project.title} cover`}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute top-3 left-3 px-2 py-1 rounded-md text-xs bg-primary/20 text-primary font-medium">
+      {/* Browser-window mockup */}
+      <div className="border-b-2 border-border bg-navbar">
+        <div className="flex items-center justify-between px-3 py-2">
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-foreground/20" />
+            <span className="w-2.5 h-2.5 rounded-full bg-foreground/20" />
+            <span className="w-2.5 h-2.5 rounded-full bg-foreground/20" />
+          </div>
+          <div className="text-[11px] text-text-secondary font-mono truncate max-w-[70%]">
+            {mockUrl.replace(/^https?:\/\//, "")}
+          </div>
+          <div className="w-6" />
+        </div>
+      </div>
+
+      <div className="relative h-48 bg-card">
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt={`${project.title} mockup`}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-text-secondary">
+            <Icon name="ImageOff" size={28} />
+          </div>
+        )}
+
+        <div className="absolute top-3 left-3 px-2 py-1 rounded-full text-xs bg-primary/15 text-primary font-medium border-2 border-border">
           {project.type}
         </div>
       </div>
@@ -39,7 +67,7 @@ const ProjectCard = ({ project, onViewDetails }) => {
           {(project.technologies || []).slice(0, 4).map((t, i) => (
             <span
               key={`${t}-${i}`}
-              className="px-2 py-1 bg-surface text-xs rounded-md"
+              className="px-2 py-1 bg-card border-2 border-border text-xs rounded-[2px] text-foreground"
             >
               {t}
             </span>

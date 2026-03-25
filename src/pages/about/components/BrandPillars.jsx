@@ -99,7 +99,7 @@ const BrandPillars = () => {
             {/* Header */}
             <div className="flex items-start space-x-4 mb-6">
               <div className={`w-16 h-16 rounded-xl ${pillar.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                <Icon name={pillar.icon} size={28} className={`bg-gradient-to-r ${pillar.color} bg-clip-text text-transparent`} />
+                <Icon name={pillar.icon} size={28} className="text-primary" />
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-foreground mb-2">
@@ -123,7 +123,7 @@ const BrandPillars = () => {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: (index * 0.1) + (idx * 0.05) }}
-                    className="flex items-center space-x-3 p-2 rounded-lg hover:bg-surface/50 transition-colors duration-200"
+                    className="flex items-center space-x-3 p-2 rounded-lg hover:bg-surface transition-colors duration-200"
                   >
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                     <span className="text-sm text-text-secondary">{example}</span>

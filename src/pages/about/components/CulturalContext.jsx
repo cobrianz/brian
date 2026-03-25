@@ -207,7 +207,7 @@ const CulturalContext = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
-                    className="bg-surface rounded-lg p-4 hover:bg-surface/80 transition-colors duration-200"
+                    className="bg-surface rounded-lg p-4 hover:bg-surface transition-colors duration-200"
                   >
                     <div className="flex items-start space-x-3">
                       <Icon name={achievement.icon} size={20} className="text-primary mt-1" />

@@ -38,10 +38,10 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
+    <section className="relative h-[calc(100vh-5rem)] max-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden bg-background">
       {/* Custom Cursor */}
       <div
-        className="fixed w-6 h-6 bg-primary/30 rounded-full pointer-events-none z-50 mix-blend-screen transition-all duration-300 ease-out"
+        className="fixed w-6 h-6 bg-primary/20 rounded-full pointer-events-none z-50 transition-all duration-300 ease-out"
         style={{
           left: mousePosition.x - 12,
           top: mousePosition.y - 12,
@@ -49,40 +49,8 @@ const HeroSection = () => {
         }}
       />
 
-      {/* Background with Crescent Effect */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Brighter Glowing Crescent */}
-        <div className="absolute -top-[10%] -right-[10%] w-[75vw] h-[75vw] max-w-[850px] max-h-[850px] rounded-full border-[2.5rem] border-primary/30 border-t-transparent border-l-transparent -rotate-45 blur-md opacity-80" />
-        
-        {/* Primary Intense Glow */}
-        <div className="absolute top-[-25%] right-[-25%] w-[120%] h-[120%] bg-[radial-gradient(circle_at_80%_20%,rgba(82,113,255,0.15)_0%,transparent_70%)]" />
-        
-        {/* Secondary Soft Ambient Glow */}
-        <div className="absolute -bottom-[25%] -left-[25%] w-[120%] h-[120%] bg-[radial-gradient(circle_at_20%_80%,rgba(82,113,255,0.06)_0%,transparent_60%)]" />
-      </div>
-
-      {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-primary/20 rounded-full"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, -100, 0],
-              opacity: [0.2, 0.8, 0.2],
-            }}
-            transition={{
-              duration: 8 + i * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            style={{
-              left: `${10 + i * 15}%`,
-              top: `${20 + i * 10}%`,
-            }}
-          />
-        ))}
+      <div className="absolute inset-0 overflow-hidden bg-background">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,197,94,0.06),transparent_24%),radial-gradient(circle_at_80%_30%,rgba(210,215,248,0.32),transparent_26%),radial-gradient(circle_at_50%_80%,rgba(255,255,255,0.7),transparent_28%)]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,7 +67,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-flex items-center space-x-2 bg-surface/50 backdrop-blur-sm border border-border rounded-full px-4 py-2 mb-6"
+              className="inline-flex items-center space-x-2 bg-surface backdrop-blur-sm border border-border rounded-full px-4 py-2 mb-6"
             >
               <div className="w-2 h-2 bg-success rounded-full animate-pulse" />
               <span className="text-sm text-text-secondary">
@@ -115,9 +83,7 @@ const HeroSection = () => {
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6 leading-tight"
             >
               Brian{" "}
-              <span className="bg-gradient-brand bg-clip-text text-transparent">
-                Cheruiyot
-              </span>
+              <span className="text-primary">Cheruiyot</span>
             </motion.h1>
 
             {/* Professional Tagline */}
@@ -153,7 +119,7 @@ const HeroSection = () => {
                 <Button
                   variant="ghost"
                   size="lg"
-                  className="w-fit text-xs sm:text-sm bg-[#1c421c] text-green-500 rounded-full px-5 py-2.5 flex items-center gap-2 transition duration-300 hover:brightness-110 shadow-inner border border-green-900/10 hover:bg-[#265226]"
+                    className="w-fit text-xs sm:text-sm bg-primary/10 text-primary rounded-full px-5 py-2.5 flex items-center gap-2 transition duration-300 hover:bg-primary/20 shadow-inner border border-primary/20"
                   iconName="MessageCircle"
                   iconPosition="left"
                 >
@@ -206,7 +172,7 @@ const HeroSection = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.8 + index * 0.1, duration: 0.4 }}
-                    className="px-3 py-1 bg-surface/50 backdrop-blur-sm border border-border rounded-full text-sm text-foreground hover:bg-primary/10 hover:border-primary/30 transition-all duration-300 cursor-default"
+                    className="px-3 py-1 bg-surface backdrop-blur-sm border border-border rounded-full text-sm text-foreground hover:bg-primary/10 hover:border-primary/30 transition-all duration-300 cursor-default"
                   >
                     {tech}
                   </motion.span>
