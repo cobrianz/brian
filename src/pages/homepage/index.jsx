@@ -16,7 +16,7 @@ const featuredProjects = [
     codeUrl: "https://github.com/cobrianz/edubora",
   },
   {
-    title: "Medicore Hospital System",
+    title: "Medcore Hospital System",
     summary:
       "A comprehensive hospital management system designed for efficient patient care, appointment scheduling, and medical record management.",
     stack: ["React", "Node.js", "MongoDB", "Express"],

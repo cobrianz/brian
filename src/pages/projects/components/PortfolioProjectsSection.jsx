@@ -54,7 +54,7 @@ const projectData = [
   },
   {
     id: 5,
-    title: "Medicore Hospital System",
+    title: "Medcore Hospital System",
     category: "Healthcare Management",
     description:
       "A comprehensive hospital management system designed for efficient patient care, appointment scheduling, and medical record management. Built with modern web technologies to ensure scalability and user-friendly interfaces.",
