@@ -5,54 +5,66 @@ import resume from "../../assets/Brian_Cheruiyot_Resume.pdf";
 
 const experience = [
   {
-    role: "Full-Stack Developer",
-    company: "Independent Projects and Client Builds",
-    period: "2023 - Present",
+    role: "Fullstack Developer",
+    company: "Freelance Web Developer",
+    period: "2022 – Present",
     points: [
-      "Built and shipped modern web applications across education, fintech, AI, and product marketing use cases.",
-      "Owned frontend implementation, application structure, API integration, and interface polish for portfolio and client-facing products.",
-      "Focused on responsive UI, readable information hierarchy, and delivery quality that supports real business use.",
+      "Developed and delivered custom web applications for clients using modern frameworks and tools.",
+      "Built responsive applications with the MERN stack and Tailwind CSS, consistently meeting client specifications.",
+      "Collaborated with clients to gather requirements, implement features, and ensure timely project delivery.",
     ],
   },
   {
-    role: "Frontend-Focused Product Developer",
-    company: "Freelance and Product Work",
-    period: "2021 - 2023",
+    role: "ICT Intern",
+    company: "Judiciary Law Courts",
+    period: "Jan 2024 – Apr 2024",
     points: [
-      "Designed and implemented product interfaces using React, Tailwind CSS, and component-driven workflows.",
-      "Improved user flows, project presentation, and screen-level clarity across multiple product concepts and demos.",
-      "Worked across both design-sensitive frontend tasks and practical backend support when needed.",
+      "Supported IT operations and system maintenance in a professional environment.",
+      "Assisted in software installations, application deployment, and system troubleshooting.",
+      "Worked with IT teams to resolve technical issues, enhancing system reliability and user satisfaction.",
     ],
   },
 ];
 
 const projectHighlights = [
   {
+    name: "Actirova AI Tutor",
+    detail: "AI-driven educational platform using React, Tailwind CSS, LangChain, Gemini API, OpenAI GPT. Personalizes learning by analyzing individual student needs and learning styles.",
+  },
+  {
     name: "Edubora Management System",
-    detail: "School management platform with role-based dashboards and structured administrative workflows.",
+    detail: "Comprehensive educational platform with automated student enrollment, course scheduling, grade tracking, and communication tools using MERN Stack.",
   },
   {
-    name: "IB Bank Liberia",
-    detail: "Responsive banking interface focused on trust, clarity, and secure account flows.",
+    name: "Medcore Hospital System",
+    detail: "Scalable hospital management system for patient care, appointment scheduling, and medical record management using MERN Stack, TypeScript, Tailwind CSS.",
   },
   {
-    name: "Actinova AI Tutor",
-    detail: "AI-assisted learning experience designed around guided lessons and clean product interaction.",
+    name: "Personal Portfolio Website",
+    detail: "Portfolio website using React, Tailwind CSS, Framer Motion, TypeScript, Vite showcasing design projects and coding samples.",
   },
 ];
 
 const skillGroups = [
   {
+    label: "Languages",
+    value: "Java, Python, JavaScript, TypeScript, PHP",
+  },
+  {
     label: "Frontend",
-    value: "React, Next.js, TypeScript, JavaScript, Tailwind CSS, responsive UI development",
+    value: "React, Next.js, Tailwind CSS, Material UI, Framer Motion",
   },
   {
     label: "Backend",
-    value: "Node.js, Express, REST APIs, authentication, MongoDB, application integration",
+    value: "Node.js, Express.js, Laravel, Django, RESTful APIs",
   },
   {
-    label: "Workflow",
-    value: "Git, product implementation, component architecture, interface refinement, performance awareness",
+    label: "Database",
+    value: "MySQL, MongoDB, PostgreSQL",
+  },
+  {
+    label: "Tools & Cloud",
+    value: "Git, GitHub, VS Code, Google Cloud, AWS (Foundational)",
   },
 ];
 
@@ -85,10 +97,10 @@ const ResumePage = () => {
             <header className="border-b border-border pb-8">
               <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                 <div>
-                  <h1 className="text-4xl font-bold text-foreground">Brian Cheruiyot</h1>
-                  <p className="mt-2 text-lg font-medium text-primary">Full-Stack Developer</p>
+                  <h1 className="text-4xl font-bold text-foreground">Brian Kipkemoi Cheruiyot</h1>
+                  <p className="mt-2 text-lg font-medium text-primary">Fullstack Developer</p>
                   <p className="mt-4 max-w-2xl text-sm leading-7 text-text-secondary">
-                    Full-stack developer with strong frontend execution and product-focused implementation skills. Builds modern web applications that prioritize clarity, responsiveness, and professional presentation.
+                    Results-driven Computer Science graduate from Maseno University specializing in software engineering, with expertise in scalable web and cross-platform applications and AI solutions.
                   </p>
                 </div>
 
@@ -96,6 +108,8 @@ const ResumePage = () => {
                   <div>Nairobi, Kenya</div>
                   <div>briancheruiyot022@gmail.com</div>
                   <div>+254 702 764 907</div>
+                  <div>briankcheruiyot.netlify.app</div>
+                  <div>linkedin.com/in/cheruiyotbrian</div>
                   <div>github.com/cobrianz</div>
                 </div>
               </div>
@@ -106,7 +120,7 @@ const ResumePage = () => {
                 <section>
                   <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-text-secondary">Professional Summary</h2>
                   <p className="mt-4 text-sm leading-8 text-foreground">
-                    Product-minded developer experienced in building interfaces and application flows with React, Next.js, TypeScript, and Node.js. Strongest where clean frontend execution, dependable implementation, and polished delivery all matter. Comfortable working across UI architecture, integration tasks, and end-to-end product refinement.
+                    Results-driven Computer Science graduate from Maseno University specializing in software engineering, with expertise in scalable web and cross-platform applications and AI solutions. Proficient in the MERN stack (MongoDB, Express.js, React, Node.js), JavaScript, and Python for dynamic user interfaces. Experienced in designing RESTful APIs, conducting unit testing, and applying agile methodologies to enhance project workflows. Completed freelance projects and an ICT internship, collaborating with cross-functional teams to deliver innovative software solutions. Recognized for strong analytical and problem-solving skills, ready to contribute to forward-thinking software development teams.
                   </p>
                 </section>
 
@@ -183,15 +197,8 @@ const ResumePage = () => {
                   <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-text-secondary">Education</h2>
                   <div className="mt-5 text-sm leading-7 text-foreground">
                     <p className="font-semibold">Bachelor of Science in Computer Science</p>
-                    <p className="text-text-secondary">Maseno University</p>
+                    <p className="text-text-secondary">Maseno University | Sep 2021 - Nov 2025</p>
                   </div>
-                </section>
-
-                <section>
-                  <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-text-secondary">Work Preference</h2>
-                  <p className="mt-5 text-sm leading-7 text-foreground">
-                    Open to remote roles, contract work, and product teams that value clean execution and strong frontend quality.
-                  </p>
                 </section>
               </aside>
             </div>

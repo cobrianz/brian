@@ -4,6 +4,8 @@ import App from "./App";
 import "./styles/tailwind.css";
 import "./styles/index.css";
 
+document.documentElement.classList.add("dark");
+
 const container = document.getElementById("root");
 const root = createRoot(container);
 
