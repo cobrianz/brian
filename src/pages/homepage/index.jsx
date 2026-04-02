@@ -16,20 +16,20 @@ const featuredProjects = [
     codeUrl: "https://github.com/cobrianz/edubora",
   },
   {
-    title: "IB Bank Liberia",
+    title: "Medicore Hospital System",
     summary:
-      "A banking experience built for secure account flows, responsive interfaces, and clear customer interactions across devices.",
-    stack: ["React", "TypeScript", "Node.js", "Express"],
-    liveUrl: "https://ib-bankliberia.netlify.app/",
-    codeUrl: "https://github.com/cobrianz/Ib-bank",
+      "A comprehensive hospital management system designed for efficient patient care, appointment scheduling, and medical record management.",
+    stack: ["React", "Node.js", "MongoDB", "Express"],
+    liveUrl: "https://medcore-chi.vercel.app/",
+    codeUrl: null,
   },
   {
-    title: "actirova.com",
+    title: "Actirova AI Powered Tutor",
     summary:
       "An AI-powered learning product focused on usable interaction design, guided content, and modern frontend execution.",
     stack: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    liveUrl: "https://actinovaraitutor.netlify.app/",
-    codeUrl: "https://github.com/cobrianz/actinova-ai-tutor",
+    liveUrl: "https://actirova.com",
+    codeUrl: null,
   },
 ];
 
@@ -105,11 +105,13 @@ const Homepage = () => {
                         Live
                       </Button>
                     </a>
-                    <a href={project.codeUrl} target="_blank" rel="noreferrer">
-                      <Button variant="outline" className="rounded-full" iconName="Github" iconPosition="left">
-                        Code
-                      </Button>
-                    </a>
+                    {project.codeUrl && (
+                      <a href={project.codeUrl} target="_blank" rel="noreferrer">
+                        <Button variant="outline" className="rounded-full" iconName="Github" iconPosition="left">
+                          Code
+                        </Button>
+                      </a>
+                    )}
                   </div>
                 </motion.article>
               ))}
