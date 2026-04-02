@@ -1,0 +1,287 @@
+diff --git a/index.html b/index.html
+index daa7cc8..8e2945d 100644
+--- a/index.html
++++ b/index.html
+@@ -1,5 +1,5 @@
+ <!doctype html>
+-<html lang="en">
++<html lang="en" class="dark">
+ 
+ <head>
+   <meta charset="utf-8" />
+diff --git a/src/pages/contact/index.jsx b/src/pages/contact/index.jsx
+index 4009747..53b46fd 100644
+--- a/src/pages/contact/index.jsx
++++ b/src/pages/contact/index.jsx
+@@ -47,7 +47,7 @@ const ContactPage = () => {
+ 
+       <main className="px-4 pb-24 pt-10 sm:px-6 lg:px-8">
+         <div className="mx-auto max-w-5xl">
+-          <section className="relative overflow-hidden rounded-[20px] border border-border bg-white p-8 md:p-10">
++          <section className="relative overflow-hidden rounded-[20px] border border-border bg-card p-8 md:p-10">
+             <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+@@ -108,7 +108,7 @@ const ContactPage = () => {
+                 <aside className="space-y-8">
+                   <section>
+                     <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-text-secondary">Best First Message</h2>
+-                    <div className="mt-5 rounded-[16px] border border-border bg-[#f5fff6] p-5">
++                    <div className="mt-5 rounded-[16px] border border-border bg-surface p-5">
+                       <p className="text-sm leading-7 text-foreground">
+                         Include the role or project type, timeline, expected responsibilities, and whether the need is full-time, freelance, or short-term contract.
+                       </p>
+@@ -124,7 +124,7 @@ const ContactPage = () => {
+                         "Frontend-heavy roles are the best fit",
+                         "Can support full-stack implementation where needed",
+                       ].map((item) => (
+-                        <div key={item} className="flex gap-3 rounded-[16px] border border-border bg-white px-4 py-3">
++                        <div key={item} className="flex gap-3 rounded-[16px] border border-border bg-surface px-4 py-3">
+                           <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-primary" />
+                           <span className="text-sm leading-7 text-foreground">{item}</span>
+                         </div>
+diff --git a/src/pages/projects/components/BrowserWindowMockup.jsx b/src/pages/projects/components/BrowserWindowMockup.jsx
+index 7d4448f..8372093 100644
+--- a/src/pages/projects/components/BrowserWindowMockup.jsx
++++ b/src/pages/projects/components/BrowserWindowMockup.jsx
+@@ -38,7 +38,7 @@ const typeStyles = {
+ };
+ 
+ const Surface = ({ children, className = "" }) => (
+-  <div className={`rounded-[18px] border border-primary/30 bg-white/60 p-4 backdrop-blur-xl ${className}`}>
++  <div className={`rounded-[18px] border border-primary/30 bg-white/5 p-4 backdrop-blur-xl ${className}`}>
+     {children}
+   </div>
+ );
+@@ -104,7 +104,7 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
+                 key={item}
+                 whileHover={{ x: 3 }}
+                 className={`flex items-center gap-2 rounded-[14px] px-2 py-2 ${
+-                  index === 1 ? "bg-primary/10" : "bg-white/60"
++                  index === 1 ? "bg-primary/10" : "bg-white/5"
+                 }`}
+               >
+                 <div className={`h-7 w-7 rounded-[10px] ${index % 2 === 0 ? "bg-[#D2D7F8]/75" : "bg-primary/16"}`} />
+@@ -162,7 +162,7 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
+                   <span>Workspace {index + 1}</span>
+                   <span>{value}%</span>
+                 </div>
+-                <div className="h-2 rounded-full bg-white/80">
++                <div className="h-2 rounded-full bg-white/5">
+                   <motion.div
+                     initial={{ width: 0 }}
+                     whileInView={{ width: `${value}%` }}
+@@ -202,9 +202,9 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
+           <div className="flex items-center justify-between">
+             <div className="h-4 w-24 rounded-full bg-[#D2D7F8]/75" />
+             <div className="flex gap-2">
+-              <div className="h-3 w-10 rounded-full bg-white/80" />
+-              <div className="h-3 w-10 rounded-full bg-white/80" />
+-              <div className="h-3 w-10 rounded-full bg-white/80" />
++              <div className="h-3 w-10 rounded-full bg-white/5" />
++              <div className="h-3 w-10 rounded-full bg-white/5" />
++              <div className="h-3 w-10 rounded-full bg-white/5" />
+             </div>
+           </div>
+         </div>
+@@ -231,7 +231,7 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
+             </div>
+           </div>
+           <div className="rounded-[18px] bg-[#D2D7F8]/55 p-3">
+-            <div className="rounded-[16px] bg-white/75 p-3">
++            <div className="rounded-[16px] bg-white/5 p-3">
+               <div className="h-24 rounded-[14px] bg-primary/12" />
+               <div className="mt-3 space-y-2">
+                 <TinyText className="w-4/5" />
+@@ -240,8 +240,8 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
+             </div>
+             <div className="mt-3 grid grid-cols-2 gap-2">
+               {[1, 2, 3, 4].map((item, index) => (
+-                <motion.div key={item} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: index * 0.04 }} className={`rounded-[14px] p-3 ${index % 2 === 0 ? "bg-white/80" : "bg-primary/10"}`}>
+-                  <div className="h-10 rounded-[12px] bg-white/75" />
++                <motion.div key={item} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: index * 0.04 }} className={`rounded-[14px] p-3 ${index % 2 === 0 ? "bg-white/5" : "bg-primary/10"}`}>
++                  <div className="h-10 rounded-[12px] bg-white/5" />
+                   <div className="mt-2 h-2.5 rounded-full bg-foreground/10" />
+                   <div className="mt-2 h-2.5 w-3/4 rounded-full bg-foreground/10" />
+                 </motion.div>
+@@ -276,7 +276,7 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
+           </div>
+           <div className="space-y-2.5">
+             {["Biology", "Math", "History", "Chemistry"].map((item, index) => (
+-              <div key={item} className={`rounded-[14px] p-3 ${index === 0 ? "bg-primary/10" : "bg-white/70"}`}>
++              <div key={item} className={`rounded-[14px] p-3 ${index === 0 ? "bg-primary/10" : "bg-white/5"}`}>
+                 <div className="flex items-center gap-2">
+                   <div className={`h-8 w-8 rounded-[10px] ${index % 2 === 0 ? "bg-[#D2D7F8]/70" : "bg-primary/14"}`} />
+                   <div className="flex-1">
+@@ -303,21 +303,21 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
+                 <div className="text-sm font-semibold text-foreground">Photosynthesis guide</div>
+                 <div className="mt-1 text-[11px] text-text-secondary">Module 4 of 7</div>
+               </div>
+-              <div className="h-8 w-8 rounded-[10px] bg-white/75" />
++              <div className="h-8 w-8 rounded-[10px] bg-white/5" />
+             </div>
+-            <div className="mt-3 h-2 rounded-full bg-white/80">
++            <div className="mt-3 h-2 rounded-full bg-white/5">
+               <motion.div initial={{ width: 0 }} whileInView={{ width: "66%" }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="h-2 rounded-full bg-primary/70" />
+             </div>
+             <div className="mt-4 grid grid-cols-3 gap-2">
+               {[1, 2, 3].map((item, index) => (
+-                <div key={item} className={`rounded-[12px] p-2 ${index === 1 ? "bg-primary/14" : "bg-white/75"}`}>
+-                  <div className="h-7 rounded-[10px] bg-white/80" />
++                <div key={item} className={`rounded-[12px] p-2 ${index === 1 ? "bg-primary/14" : "bg-white/5"}`}>
++                  <div className="h-7 rounded-[10px] bg-white/5" />
+                 </div>
+               ))}
+             </div>
+           </div>
+           <div className="mt-3 grid grid-cols-2 gap-3">
+-            <div className="rounded-[14px] bg-white/80 p-3">
++            <div className="rounded-[14px] bg-white/5 p-3">
+               <div className="text-[11px] text-text-secondary">Quiz performance</div>
+               <div className="mt-2">
+                 <AnimatedSparkline />
+@@ -339,7 +339,7 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
+         <Surface className="p-4">
+           <div className="text-sm font-medium text-foreground">Signal score</div>
+           <div className="mt-3 text-3xl font-semibold text-foreground">87%</div>
+-          <div className="mt-3 h-2 rounded-full bg-white/80">
++          <div className="mt-3 h-2 rounded-full bg-white/5">
+             <motion.div initial={{ width: 0 }} whileInView={{ width: "87%" }} viewport={{ once: true }} transition={{ duration: 0.55 }} className="h-2 rounded-full bg-primary/70" />
+           </div>
+           <div className="mt-4 grid grid-cols-2 gap-2">
+@@ -387,9 +387,9 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
+               {index === 0 ? "148k" : index === 1 ? "68%" : "$12.4k"}
+             </div>
+             <div className={`mt-3 rounded-[14px] p-3 ${index === 1 ? "bg-[#D2D7F8]/70" : "bg-primary/12"}`}>
+-              <div className="h-8 rounded-[10px] bg-white/80" />
+-              <div className="mt-2 h-2.5 rounded-full bg-white/80" />
+-              <div className="mt-2 h-2.5 w-3/4 rounded-full bg-white/80" />
++              <div className="h-8 rounded-[10px] bg-white/5" />
++              <div className="mt-2 h-2.5 rounded-full bg-white/5" />
++              <div className="mt-2 h-2.5 w-3/4 rounded-full bg-white/5" />
+             </div>
+           </Surface>
+         ))}
+@@ -405,16 +405,16 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
+             <div className="flex items-center justify-between">
+               <div className="h-4 w-20 rounded-full bg-primary/16" />
+               <div className="flex gap-2">
+-                <div className="h-3 w-8 rounded-full bg-white/80" />
+-                <div className="h-3 w-8 rounded-full bg-white/80" />
+-                <div className="h-3 w-8 rounded-full bg-white/80" />
++                <div className="h-3 w-8 rounded-full bg-white/5" />
++                <div className="h-3 w-8 rounded-full bg-white/5" />
++                <div className="h-3 w-8 rounded-full bg-white/5" />
+               </div>
+             </div>
+           </div>
+           <div className="p-4">
+             <div className="grid grid-cols-2 gap-3">
+               {[1, 2].map((item, index) => (
+-                <div key={item} className="rounded-[16px] bg-white/80 p-3">
++                <div key={item} className="rounded-[16px] bg-white/5 p-3">
+                   <div className={`h-24 rounded-[12px] ${index === 0 ? "bg-[#D2D7F8]/62" : "bg-primary/14"}`} />
+                   <div className="mt-3 space-y-2">
+                     <TinyText className="w-full" />
+@@ -437,7 +437,7 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
+           </div>
+           <div className="space-y-3">
+             {[1, 2, 3].map((item, index) => (
+-              <motion.div key={item} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: index * 0.05 }} className="flex items-center gap-3 rounded-[14px] bg-white/80 p-3">
++              <motion.div key={item} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: index * 0.05 }} className="flex items-center gap-3 rounded-[14px] bg-white/5 p-3">
+                 <div className={`h-10 w-10 rounded-[10px] ${index === 1 ? "bg-[#D2D7F8]/70" : "bg-primary/14"}`} />
+                 <div className="flex-1">
+                   <TinyText className="w-4/5" />
+@@ -457,7 +457,7 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
+         </div>
+         <div className="grid grid-cols-3 gap-3">
+           {[1, 2, 3].map((item, index) => (
+-            <motion.div key={item} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: index * 0.04 }} className="rounded-[14px] bg-white/80 p-3">
++            <motion.div key={item} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: index * 0.04 }} className="rounded-[14px] bg-white/5 p-3">
+               <div className={`h-16 rounded-[10px] ${index === 2 ? "bg-primary/14" : "bg-[#D2D7F8]/55"}`} />
+               <div className="mt-3 space-y-2">
+                 <TinyText className="w-full" />
+@@ -495,7 +495,7 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
+     >
+       <div className={`absolute -left-6 top-12 h-28 w-28 rounded-full ${palette.glowA} blur-3xl`} />
+       <div className={`absolute -right-4 bottom-8 h-32 w-32 rounded-full ${palette.glowB} blur-3xl`} />
+-      <div className="rounded-[22px] border border-primary/30 bg-white/58 p-4 backdrop-blur-xl">
++      <div className="rounded-[22px] border border-primary/30 bg-white/5 p-4 backdrop-blur-xl">
+         <div className="mb-4 flex items-center justify-between border-b border-primary/20 pb-3">
+           <div className="flex items-center gap-2">
+             <span className="h-2.5 w-2.5 rounded-full bg-[#dcfce7]" />
+diff --git a/src/pages/projects/components/PortfolioProjectsSection.jsx b/src/pages/projects/components/PortfolioProjectsSection.jsx
+index 099f26b..44f2f8f 100644
+--- a/src/pages/projects/components/PortfolioProjectsSection.jsx
++++ b/src/pages/projects/components/PortfolioProjectsSection.jsx
+@@ -68,7 +68,7 @@ const projectData = [
+ 
+ const PortfolioProjectsSection = () => {
+   return (
+-    <section className="relative overflow-hidden bg-[#fbfffb] py-16 lg:py-24">
++    <section className="relative overflow-hidden bg-background py-16 lg:py-24">
+       <div className="absolute inset-0 pointer-events-none">
+         <div className="absolute left-[8%] top-24 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
+         <div className="absolute right-[10%] top-[30%] h-48 w-48 rounded-full bg-[#D2D7F8]/60 blur-3xl" />
+@@ -104,7 +104,7 @@ const PortfolioProjectsSection = () => {
+                   transition={{ duration: 0.5, delay: 0.08 }}
+                   className="w-full lg:w-[46%]"
+                 >
+-                  <div className="rounded-[24px] border border-white/50 bg-white/68 p-7 backdrop-blur-xl">
++                  <div className="rounded-[24px] border border-border bg-surface/60 p-7 backdrop-blur-xl">
+                     <p className="text-xs font-medium uppercase tracking-[0.24em] text-primary">
+                       Case Study {String(index + 1).padStart(2, "0")}
+                     </p>
+@@ -126,7 +126,7 @@ const PortfolioProjectsSection = () => {
+                         <motion.span
+                           key={item}
+                           variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }}
+-                          className="rounded-full border border-white/40 bg-white/70 px-3 py-1 text-sm text-foreground"
++                          className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-foreground"
+                         >
+                           {item}
+                         </motion.span>
+@@ -161,7 +161,7 @@ const PortfolioProjectsSection = () => {
+                         </Button>
+                       </a>
+                       <a href={project.githubUrl} target="_blank" rel="noreferrer">
+-                        <Button variant="outline" className="rounded-[18px] bg-white/70" iconName="Github" iconPosition="left">
++                        <Button variant="outline" className="rounded-[18px] bg-white/5" iconName="Github" iconPosition="left">
+                           Source Code
+                         </Button>
+                       </a>
+diff --git a/src/pages/resume/index.jsx b/src/pages/resume/index.jsx
+index 25b283f..8adebd5 100644
+--- a/src/pages/resume/index.jsx
++++ b/src/pages/resume/index.jsx
+@@ -81,7 +81,7 @@ const ResumePage = () => {
+             </a>
+           </div>
+ 
+-          <section className="relative overflow-hidden rounded-[20px] border border-border bg-white p-8 md:p-10">
++          <section className="relative overflow-hidden rounded-[20px] border border-border bg-card p-8 md:p-10">
+             <header className="border-b border-border pb-8">
+               <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                 <div>
+@@ -172,7 +172,7 @@ const ResumePage = () => {
+                       "Product UI polish",
+                       "Professional presentation",
+                     ].map((item) => (
+-                      <div key={item} className="rounded-[14px] border border-border bg-[#f5fff6] px-4 py-3 text-sm text-foreground">
++                      <div key={item} className="rounded-[14px] border border-border bg-surface px-4 py-3 text-sm text-foreground">
+                         {item}
+                       </div>
+                     ))}
+diff --git a/src/styles/tailwind.css b/src/styles/tailwind.css
+index 596f6b8..c31cc47 100644
+--- a/src/styles/tailwind.css
++++ b/src/styles/tailwind.css
+@@ -52,7 +52,7 @@
+ 
+   .dark {
+     /* Base palette (Dark) */
+-    --color-background: #020617;
++    --color-background: #121212;
+     --color-foreground: #ffffff;
+ 
+     --color-card: rgba(2, 6, 23, 0.45);

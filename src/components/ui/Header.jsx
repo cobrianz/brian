@@ -36,7 +36,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 left-0 right-0 z-50 bg-transparent px-3 pt-3 sm:px-4 lg:px-6">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between gap-6 rounded-[24px] border border-white/70 bg-[#eef1ff]/90 px-4 backdrop-blur-xl sm:h-[72px] sm:px-5">
+        <div className="flex h-16 items-center justify-between gap-6 rounded-[24px] border border-border bg-navbar/85 px-4 backdrop-blur-xl sm:h-[72px] sm:px-5">
           <Link
             to="/"
             className="shrink-0"
@@ -46,15 +46,15 @@ const Header = () => {
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1 rounded-full border border-white/70 bg-white/45 p-1.5 backdrop-blur">
+          <nav className="hidden lg:flex items-center gap-1 rounded-full border border-border bg-navbar/90 p-1.5 backdrop-blur">
             {navigationItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 className={`rounded-[18px] px-4 py-2 text-sm font-medium transition-all duration-200 ${
                   isActivePath(item.path)
-                    ? "bg-[#f2fff2] text-foreground"
-                    : "text-text-secondary hover:bg-white/60 hover:text-foreground"
+                    ? "bg-surface text-foreground"
+                    : "text-text-secondary hover:bg-background/80 hover:text-foreground"
                 }`}
               >
                 {item.name}
@@ -66,7 +66,7 @@ const Header = () => {
             <Link to="/contact">
               <Button
                 size="sm"
-                className="rounded-full bg-[#bdf5c8] px-5 text-foreground hover:bg-[#a8efb6]"
+                className="rounded-full bg-primary px-5 text-primary-foreground hover:bg-primary/90"
                 iconName="ArrowUpRight"
                 iconPosition="right"
               >
@@ -95,7 +95,7 @@ const Header = () => {
           isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="mt-3 rounded-[24px] border border-white/70 bg-[#eef1ff]/95 px-4 py-4 backdrop-blur-xl">
+        <div className="mt-3 rounded-[24px] border border-border bg-navbar/95 px-4 py-4 backdrop-blur-xl">
           <nav className="space-y-2">
             {navigationItems.map((item) => (
               <Link
@@ -103,8 +103,8 @@ const Header = () => {
                 to={item.path}
                 className={`block px-4 py-3 rounded-lg transition-all duration-300 ${
                   isActivePath(item.path)
-                    ? "bg-[#f2fff2] text-foreground"
-                    : "text-foreground hover:bg-white/70"
+                    ? "bg-surface text-foreground"
+                    : "text-foreground hover:bg-background/70"
                 }`}
               >
                 <span className="font-medium">{item.name}</span>
@@ -114,7 +114,7 @@ const Header = () => {
               <Link to="/contact" className="block">
                 <Button
                   fullWidth
-                  className="rounded-full bg-[#bdf5c8] text-foreground hover:bg-[#a8efb6]"
+                  className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
                   iconName="ArrowUpRight"
                   iconPosition="right"
                 >

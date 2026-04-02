@@ -24,7 +24,7 @@ const featuredProjects = [
     codeUrl: "https://github.com/cobrianz/Ib-bank",
   },
   {
-    title: "Actinova AI Tutor",
+    title: "actirova.com",
     summary:
       "An AI-powered learning product focused on usable interaction design, guided content, and modern frontend execution.",
     stack: ["React", "TypeScript", "Tailwind CSS", "Vite"],
@@ -119,8 +119,8 @@ const Homepage = () => {
 
         <section className="relative overflow-hidden pb-24 pt-12">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="rounded-[24px] border border-border bg-[#f4fff5] px-6 py-10 lg:px-10">
-              <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="rounded-[24px] bg-surface px-6 py-10 lg:px-10">
+              <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-start">
                 <div className="max-w-2xl">
                   <p className="text-sm font-medium uppercase tracking-[0.2em] text-text-secondary">Open to opportunities</p>
                   <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">If you need polished execution, strong frontend work, and dependable follow-through, let's talk.</h2>
@@ -129,7 +129,7 @@ const Homepage = () => {
                   </p>
                 </div>
 
-                <div className="flex flex-col gap-3 sm:flex-row">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-start">
                   <Link to="/contact">
                     <Button
                       size="lg"

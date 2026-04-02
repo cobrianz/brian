@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { GraduationCap, Banknote, Brain, BarChart3, Heart, UserPlus, Calendar, FileText, CreditCard, Receipt, Zap, BookOpen, MessageCircle, TrendingUp, Users, DollarSign, AlertTriangle, XCircle, Clock, Activity } from "lucide-react";
 
 const chartHeights = [58, 82, 64, 96, 72, 88, 68];
 const sparklineHeights = [22, 30, 18, 34, 26, 38, 28, 36];
@@ -7,38 +8,38 @@ const sparklineHeights = [22, 30, 18, 34, 26, 38, 28, 36];
 const typeStyles = {
   dashboard: {
     glowA: "bg-primary/12",
-    glowB: "bg-[#D2D7F8]/55",
-    accent: "bg-primary/18",
-    accentSoft: "bg-[#dcfce7]",
+    glowB: "bg-secondary/50",
+    accent: "bg-accent/20",
+    accentSoft: "bg-accent",
   },
   landing: {
-    glowA: "bg-[#d9f99d]/35",
-    glowB: "bg-[#D2D7F8]/55",
-    accent: "bg-[#ecfccb]",
+    glowA: "bg-accent/35",
+    glowB: "bg-secondary/50",
+    accent: "bg-accent",
     accentSoft: "bg-primary/15",
   },
   mobile: {
-    glowA: "bg-[#bbf7d0]/40",
-    glowB: "bg-[#D2D7F8]/50",
+    glowA: "bg-secondary/40",
+    glowB: "bg-secondary/50",
     accent: "bg-primary/18",
-    accentSoft: "bg-[#dcfce7]",
+    accentSoft: "bg-accent",
   },
   analytics: {
     glowA: "bg-primary/10",
-    glowB: "bg-[#c7d2fe]/50",
-    accent: "bg-[#D2D7F8]/70",
+    glowB: "bg-secondary/50",
+    accent: "bg-secondary/70",
     accentSoft: "bg-primary/12",
   },
   storefront: {
-    glowA: "bg-[#dcfce7]/45",
-    glowB: "bg-[#D2D7F8]/50",
-    accent: "bg-[#f0fdf4]",
+    glowA: "bg-accent/45",
+    glowB: "bg-secondary/50",
+    accent: "bg-surface",
     accentSoft: "bg-primary/15",
   },
 };
 
 const Surface = ({ children, className = "" }) => (
-  <div className={`rounded-[18px] border border-primary/30 bg-white/60 p-4 backdrop-blur-xl ${className}`}>
+  <div className={`rounded-[18px] border border-primary/30 bg-white/5 p-4 backdrop-blur-xl ${className}`}>
     {children}
   </div>
 );
@@ -67,7 +68,7 @@ const AnimatedSparkline = () => (
     {sparklineHeights.map((height, index) => (
       <motion.div
         key={index}
-        className={`${index % 3 === 0 ? "bg-[#D2D7F8]" : "bg-primary/25"} w-2 rounded-full`}
+        className={`${index % 3 === 0 ? "bg-secondary" : "bg-primary/25"} w-2 rounded-full`}
         initial={{ height: 0 }}
         whileInView={{ height }}
         viewport={{ once: true }}
@@ -80,7 +81,7 @@ const AnimatedSparkline = () => (
 const StatusPill = ({ text, tone = "primary" }) => (
   <div
     className={`rounded-full px-2 py-1 text-[10px] ${
-      tone === "secondary" ? "bg-[#D2D7F8]/75 text-foreground" : "bg-primary/12 text-primary"
+      tone === "secondary" ? "bg-secondary/75 text-foreground" : "bg-primary/12 text-primary"
     }`}
   >
     {text}
@@ -92,379 +93,448 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
 
   const renderDashboard = () => (
     <div className="space-y-3">
-      <div className="grid grid-cols-[0.78fr_1.22fr] gap-3">
-        <Surface className="p-3">
-          <div className="mb-3 flex items-center justify-between">
-            <div className="text-[11px] font-medium text-foreground">Workspace</div>
-            <StatusPill text="Live" />
-          </div>
-          <div className="space-y-2.5">
-            {["Overview", "Revenue", "Teams", "Automations", "Settings"].map((item, index) => (
-              <motion.div
-                key={item}
-                whileHover={{ x: 3 }}
-                className={`flex items-center gap-2 rounded-[14px] px-2 py-2 ${
-                  index === 1 ? "bg-primary/10" : "bg-white/60"
-                }`}
-              >
-                <div className={`h-7 w-7 rounded-[10px] ${index % 2 === 0 ? "bg-[#D2D7F8]/75" : "bg-primary/16"}`} />
-                <div className="flex-1">
-                  <TinyText className="w-16" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </Surface>
-
-        <div className="space-y-3">
-          <div className="grid grid-cols-3 gap-3">
-            {[
-              { label: "Revenue", value: "$48.2k", tint: "bg-[#ecfccb]" },
-              { label: "Teams", value: "124", tint: "bg-[#D2D7F8]/65" },
-              { label: "Growth", value: "+18%", tint: "bg-[#dcfce7]" },
-            ].map((item, index) => (
-              <motion.div key={item.label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.35, delay: index * 0.06 }}>
-                <Surface className="p-3">
-                  <div className={`h-8 w-8 rounded-[12px] ${item.tint}`} />
-                  <div className="mt-3 text-[11px] text-text-secondary">{item.label}</div>
-                  <div className="mt-1 text-lg font-semibold text-foreground">{item.value}</div>
-                  <div className="mt-3">
-                    <AnimatedSparkline />
-                  </div>
-                </Surface>
-              </motion.div>
-            ))}
-          </div>
-
-          <Surface className="p-4">
-            <div className="mb-4 flex items-center justify-between">
-              <div>
-                <div className="text-sm font-medium text-foreground">Performance</div>
-                <div className="text-[11px] text-text-secondary">Quarterly breakdown</div>
-              </div>
-              <StatusPill text="Q2" tone="secondary" />
+      {/* School Management Header */}
+      <Surface className="p-3">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2">
+            <div className="h-6 w-6 rounded bg-blue-500/20 flex items-center justify-center">
+              <GraduationCap className="h-4 w-4 text-blue-500" />
             </div>
-            <AnimatedBars />
-          </Surface>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-[1.15fr_0.85fr] gap-3">
-        <Surface className="p-4">
-          <div className="mb-3 flex items-center justify-between">
-            <div className="text-sm font-medium text-foreground">Team activity</div>
-            <div className="h-7 w-20 rounded-full bg-primary/12" />
+            <div className="text-sm font-semibold text-foreground">Edubora</div>
           </div>
-          <div className="space-y-3">
-            {[72, 58, 88].map((value, index) => (
-              <div key={index}>
-                <div className="mb-1 flex items-center justify-between text-[11px] text-text-secondary">
-                  <span>Workspace {index + 1}</span>
-                  <span>{value}%</span>
-                </div>
-                <div className="h-2 rounded-full bg-white/80">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${value}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.08 }}
-                    className={`h-2 rounded-full ${index === 1 ? "bg-[#D2D7F8]" : "bg-primary/70"}`}
-                  />
-                </div>
+        </div>
+        <div className="grid grid-cols-3 gap-2">
+          {[
+            { label: "Students", value: "1,247" },
+            { label: "Teachers", value: "89" },
+            { label: "Classes", value: "156" },
+          ].map((item, index) => (
+            <div key={item.label} className="rounded-lg bg-surface/50 p-2 text-center">
+              <div className="h-4 w-4 mx-auto rounded bg-primary/20 mb-1" />
+              <div className="text-[10px] text-text-secondary">{item.label}</div>
+              <div className="text-sm font-semibold text-foreground">{item.value}</div>
+            </div>
+          ))}
+        </div>
+      </Surface>
+
+      {/* Navigation & Quick Actions */}
+      <div className="grid grid-cols-2 gap-3">
+        <Surface className="p-3">
+          <div className="mb-2 text-xs font-medium text-foreground">Quick Actions</div>
+          <div className="space-y-2">
+            {[
+              { label: "Add Student", icon: UserPlus },
+              { label: "Schedule Class", icon: Calendar },
+              { label: "Grade Reports", icon: FileText },
+            ].map((item, index) => (
+              <div key={item.label} className="flex items-center gap-2 rounded bg-surface/50 p-2">
+                <item.icon className="h-4 w-4 text-primary/60" />
+                <span className="text-xs text-foreground">{item.label}</span>
               </div>
             ))}
           </div>
         </Surface>
 
-        <Surface className="p-4">
-          <div className="mb-3 text-sm font-medium text-foreground">Status cards</div>
-          <div className="space-y-3">
+        <Surface className="p-3">
+          <div className="mb-2 text-xs font-medium text-foreground">Today's Schedule</div>
+          <div className="space-y-1.5">
             {[
-              { title: "Deploy", value: "Healthy", tone: "bg-[#dcfce7]" },
-              { title: "Errors", value: "0 critical", tone: "bg-[#D2D7F8]/70" },
-              { title: "Tickets", value: "4 pending", tone: "bg-[#ecfccb]" },
+              { time: "9:00", subject: "Math 101", room: "A-12" },
+              { time: "11:00", subject: "Science", room: "B-08" },
+              { time: "2:00", subject: "English", room: "C-15" },
             ].map((item, index) => (
-              <motion.div key={item.title} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.35, delay: index * 0.06 }} className={`rounded-[14px] ${item.tone} p-3`}>
-                <div className="text-[11px] text-text-secondary">{item.title}</div>
-                <div className="mt-1 text-sm font-semibold text-foreground">{item.value}</div>
-              </motion.div>
+              <div key={index} className="flex items-center justify-between rounded bg-surface/50 p-2">
+                <div>
+                  <div className="text-xs font-medium text-foreground">{item.time}</div>
+                  <div className="text-[10px] text-text-secondary">{item.subject}</div>
+                </div>
+                <div className="text-[10px] text-text-secondary">{item.room}</div>
+              </div>
             ))}
           </div>
         </Surface>
       </div>
+
+      {/* Performance Overview */}
+      <Surface className="p-3">
+        <div className="mb-2 text-xs font-medium text-foreground">Class Performance</div>
+        <div className="h-16 rounded bg-gradient-to-r from-green-400/10 to-blue-500/20 mb-2">
+          <AnimatedSparkline />
+        </div>
+        <div className="grid grid-cols-3 gap-2">
+          {[
+            { label: "Avg Grade", value: "B+", color: "text-green-400" },
+            { label: "Attendance", value: "94%", color: "text-blue-400" },
+            { label: "Completed", value: "87%", color: "text-purple-400" },
+          ].map((item, index) => (
+            <div key={item.label} className="text-center">
+              <div className={`text-sm font-semibold ${item.color}`}>{item.value}</div>
+              <div className="text-[9px] text-text-secondary">{item.label}</div>
+            </div>
+          ))}
+        </div>
+      </Surface>
     </div>
   );
 
   const renderLanding = () => (
     <div className="space-y-3">
-      <Surface className="overflow-hidden p-0">
-        <div className="border-b border-primary/20 px-4 py-3">
-          <div className="flex items-center justify-between">
-            <div className="h-4 w-24 rounded-full bg-[#D2D7F8]/75" />
-            <div className="flex gap-2">
-              <div className="h-3 w-10 rounded-full bg-white/80" />
-              <div className="h-3 w-10 rounded-full bg-white/80" />
-              <div className="h-3 w-10 rounded-full bg-white/80" />
+      {/* Banking Hero */}
+      <Surface className="p-3">
+        <div className="text-center">
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <div className="h-8 w-8 rounded bg-green-500/20 flex items-center justify-center">
+              <Banknote className="h-5 w-5 text-green-500" />
             </div>
+            <div className="text-lg font-bold text-foreground">IB Bank Liberia</div>
           </div>
-        </div>
-        <div className="grid gap-4 px-4 py-4 lg:grid-cols-[1.08fr_0.92fr]">
-          <div>
-            <div className="h-7 w-4/5 rounded-full bg-foreground/10" />
-            <div className="mt-2 h-7 w-2/3 rounded-full bg-foreground/10" />
-            <div className="mt-4 space-y-2">
-              <TinyText className="w-full" />
-              <TinyText className="w-5/6" />
-              <TinyText className="w-2/3" />
-            </div>
-            <div className="mt-4 flex gap-3">
-              <motion.div whileHover={{ y: -2 }} className="h-9 w-24 rounded-full bg-primary/18" />
-              <motion.div whileHover={{ y: -2 }} className="h-9 w-24 rounded-full bg-[#D2D7F8]/65" />
-            </div>
-            <div className="mt-5 grid grid-cols-3 gap-2">
-              {[["12k", "#ecfccb"], ["28%", "#D2D7F8"], ["4.8", "#dcfce7"]].map(([value, color], index) => (
-                <motion.div key={value} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.35, delay: index * 0.05 }} className="rounded-[14px] p-3" style={{ backgroundColor: color }}>
-                  <div className="text-[10px] text-text-secondary">Metric</div>
-                  <div className="mt-1 text-sm font-semibold text-foreground">{value}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-[18px] bg-[#D2D7F8]/55 p-3">
-            <div className="rounded-[16px] bg-white/75 p-3">
-              <div className="h-24 rounded-[14px] bg-primary/12" />
-              <div className="mt-3 space-y-2">
-                <TinyText className="w-4/5" />
-                <TinyText className="w-2/3" />
+          <div className="text-sm text-text-secondary mb-4">Secure Banking Solutions</div>
+          <div className="grid grid-cols-3 gap-2">
+            {[
+              { label: "Accounts", value: "12,847" },
+              { label: "Transactions", value: "45.2k" },
+              { label: "Uptime", value: "99.9%" },
+            ].map((item, index) => (
+              <div key={item.label} className="rounded bg-surface/50 p-2 text-center">
+                <div className="text-[10px] text-text-secondary">{item.label}</div>
+                <div className="text-sm font-semibold text-foreground">{item.value}</div>
               </div>
-            </div>
-            <div className="mt-3 grid grid-cols-2 gap-2">
-              {[1, 2, 3, 4].map((item, index) => (
-                <motion.div key={item} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: index * 0.04 }} className={`rounded-[14px] p-3 ${index % 2 === 0 ? "bg-white/80" : "bg-primary/10"}`}>
-                  <div className="h-10 rounded-[12px] bg-white/75" />
-                  <div className="mt-2 h-2.5 rounded-full bg-foreground/10" />
-                  <div className="mt-2 h-2.5 w-3/4 rounded-full bg-foreground/10" />
-                </motion.div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </Surface>
 
-      <div className="grid grid-cols-3 gap-3">
-        {["Hero", "Proof", "CTA"].map((item, index) => (
-          <Surface key={item} className="p-3">
-            <div className={`h-20 rounded-[14px] ${index === 1 ? "bg-primary/14" : "bg-[#D2D7F8]/60"}`} />
-            <div className="mt-3 text-[11px] text-text-secondary">{item}</div>
-            <div className="mt-2 space-y-2">
-              <TinyText className="w-full" />
-              <TinyText className="w-2/3" />
+      {/* Account Overview */}
+      <div className="grid grid-cols-2 gap-3">
+        <Surface className="p-3">
+          <div className="mb-2 text-xs font-medium text-foreground">Account Balance</div>
+          <div className="text-xl font-bold text-foreground mb-1">$2,847.92</div>
+          <div className="text-[10px] text-green-400 mb-3">+2.4% this month</div>
+          <div className="space-y-2">
+            <div className="flex justify-between items-center">
+              <span className="text-[10px] text-text-secondary">Checking</span>
+              <span className="text-sm font-semibold">$1,247.92</span>
             </div>
-          </Surface>
-        ))}
+            <div className="flex justify-between items-center">
+              <span className="text-[10px] text-text-secondary">Savings</span>
+              <span className="text-sm font-semibold">$1,600.00</span>
+            </div>
+          </div>
+        </Surface>
+
+        <Surface className="p-3">
+          <div className="mb-2 text-xs font-medium text-foreground">Quick Actions</div>
+          <div className="grid grid-cols-2 gap-2">
+            {[
+              { label: "Transfer", icon: CreditCard },
+              { label: "Pay Bills", icon: Receipt },
+              { label: "Cards", icon: CreditCard },
+              { label: "History", icon: Clock },
+            ].map((item, index) => (
+              <div key={item.label} className="rounded bg-surface/50 p-2 text-center">
+                <item.icon className="h-4 w-4 text-primary/60 mb-1 mx-auto" />
+                <div className="text-[9px] text-text-secondary">{item.label}</div>
+              </div>
+            ))}
+          </div>
+        </Surface>
       </div>
+
+      {/* Recent Transactions */}
+      <Surface className="p-3">
+        <div className="mb-2 text-xs font-medium text-foreground">Recent Transactions</div>
+        <div className="space-y-2">
+          {[
+            { merchant: "Grocery Store", amount: "-$67.43", time: "2h ago", type: "debit" },
+            { merchant: "Salary Deposit", amount: "+$2,500.00", time: "1d ago", type: "credit" },
+            { merchant: "Coffee Shop", amount: "-$4.50", time: "2d ago", type: "debit" },
+          ].map((item, index) => (
+            <div key={index} className="flex items-center justify-between rounded bg-surface/50 p-2">
+              <div>
+                <div className="text-xs font-medium text-foreground">{item.merchant}</div>
+                <div className="text-[9px] text-text-secondary">{item.time}</div>
+              </div>
+              <div className={`text-sm font-semibold ${item.type === 'credit' ? 'text-green-400' : 'text-red-400'}`}>
+                {item.amount}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Surface>
     </div>
   );
 
   const renderDesktopApp = () => (
     <div className="space-y-3">
-      <div className="grid grid-cols-[0.9fr_1.1fr] gap-3">
+      {/* AI Learning Header */}
+      <Surface className="p-3">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2">
+            <div className="h-6 w-6 rounded bg-purple-500/20 flex items-center justify-center">
+              <Brain className="h-4 w-4 text-purple-500" />
+            </div>
+            <div className="text-sm font-semibold text-foreground">actirova</div>
+          </div>
+        </div>
+        <div className="text-center mb-3">
+          <div className="text-sm font-bold text-foreground">AI-Powered Learning</div>
+          <div className="text-[10px] text-text-secondary">Personalized Education</div>
+        </div>
+      </Surface>
+
+      {/* Learning Progress */}
+      <div className="grid grid-cols-2 gap-3">
         <Surface className="p-3">
-          <div className="mb-3 flex items-center justify-between">
-            <div className="text-[11px] font-medium text-foreground">Learning paths</div>
-            <StatusPill text="Active" />
+          <div className="mb-2 text-xs font-medium text-foreground">Current Course</div>
+          <div className="text-sm font-semibold text-foreground mb-1">Advanced Calculus</div>
+          <div className="text-[10px] text-text-secondary mb-2">Chapter 7: Integration</div>
+          <div className="h-2 rounded-full bg-surface/50 mb-2">
+            <motion.div initial={{ width: 0 }} whileInView={{ width: "73%" }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="h-2 rounded-full bg-purple-500/70" />
           </div>
-          <div className="space-y-2.5">
-            {["Biology", "Math", "History", "Chemistry"].map((item, index) => (
-              <div key={item} className={`rounded-[14px] p-3 ${index === 0 ? "bg-primary/10" : "bg-white/70"}`}>
-                <div className="flex items-center gap-2">
-                  <div className={`h-8 w-8 rounded-[10px] ${index % 2 === 0 ? "bg-[#D2D7F8]/70" : "bg-primary/14"}`} />
-                  <div className="flex-1">
-                    <TinyText className="w-16" />
-                    <TinyText className="mt-2 w-10" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <div className="text-[9px] text-purple-400">73% Complete</div>
         </Surface>
 
-        <Surface className="p-4">
-          <div className="mb-4 flex items-center justify-between">
-            <div>
-              <div className="text-sm font-medium text-foreground">Tutor workspace</div>
-              <div className="text-[11px] text-text-secondary">Adaptive lesson generation</div>
-            </div>
-            <StatusPill text="AI tutor" tone="secondary" />
+        <Surface className="p-3">
+          <div className="mb-2 text-xs font-medium text-foreground">AI Tutor</div>
+          <div className="h-12 w-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-2 mx-auto">
+            <div className="h-6 w-6 rounded bg-purple-500" />
           </div>
-          <div className="rounded-[16px] bg-[#D2D7F8]/60 p-4">
-            <div className="flex items-start justify-between">
-              <div>
-                <div className="text-sm font-semibold text-foreground">Photosynthesis guide</div>
-                <div className="mt-1 text-[11px] text-text-secondary">Module 4 of 7</div>
-              </div>
-              <div className="h-8 w-8 rounded-[10px] bg-white/75" />
-            </div>
-            <div className="mt-3 h-2 rounded-full bg-white/80">
-              <motion.div initial={{ width: 0 }} whileInView={{ width: "66%" }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="h-2 rounded-full bg-primary/70" />
-            </div>
-            <div className="mt-4 grid grid-cols-3 gap-2">
-              {[1, 2, 3].map((item, index) => (
-                <div key={item} className={`rounded-[12px] p-2 ${index === 1 ? "bg-primary/14" : "bg-white/75"}`}>
-                  <div className="h-7 rounded-[10px] bg-white/80" />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="mt-3 grid grid-cols-2 gap-3">
-            <div className="rounded-[14px] bg-white/80 p-3">
-              <div className="text-[11px] text-text-secondary">Quiz performance</div>
-              <div className="mt-2">
-                <AnimatedSparkline />
-              </div>
-            </div>
-            <div className="rounded-[14px] bg-primary/10 p-3">
-              <div className="text-[11px] text-text-secondary">Completion</div>
-              <div className="mt-2 text-lg font-semibold text-foreground">84%</div>
-            </div>
+          <div className="text-center">
+            <div className="text-[10px] text-text-secondary">Available 24/7</div>
+            <div className="text-[9px] text-purple-400">Ask me anything!</div>
           </div>
         </Surface>
       </div>
+
+      {/* Learning Modules */}
+      <Surface className="p-3">
+        <div className="mb-2 text-xs font-medium text-foreground">Today's Learning Path</div>
+        <div className="grid grid-cols-3 gap-2 mb-3">
+          {[
+            { title: "Video", progress: 100, icon: BookOpen },
+            { title: "Quiz", progress: 60, icon: FileText },
+            { title: "Practice", progress: 30, icon: Zap },
+          ].map((item, index) => (
+            <div key={item.title} className="text-center">
+              <div className="h-8 w-8 rounded bg-surface/50 flex items-center justify-center mb-1 mx-auto">
+                <item.icon className="h-3 w-3 text-primary/60" />
+              </div>
+              <div className="text-[9px] text-text-secondary">{item.title}</div>
+              <div className="h-1 rounded-full bg-surface/50 mt-1">
+                <div className="h-1 rounded-full bg-purple-500/70" style={{ width: `${item.progress}%` }} />
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-between items-center">
+          <div className="text-[10px] text-text-secondary">Streak: 15 days</div>
+          <div className="text-[10px] text-green-400">+12 XP today</div>
+        </div>
+      </Surface>
+
+      {/* Quick Actions */}
+      <Surface className="p-3">
+        <div className="grid grid-cols-4 gap-2">
+          {[
+            { label: "Learn", icon: BookOpen },
+            { label: "Practice", icon: Zap },
+            { label: "Chat AI", icon: MessageCircle },
+            { label: "Progress", icon: TrendingUp },
+          ].map((item, index) => (
+            <div key={item.label} className="text-center">
+              <div className={`h-8 w-8 rounded flex items-center justify-center mb-1 mx-auto ${index === 2 ? "bg-purple-500/20" : "bg-surface/50"}`}>
+                <item.icon className="h-3 w-3 text-primary/60" />
+              </div>
+              <div className="text-[9px] text-text-secondary">{item.label}</div>
+            </div>
+          ))}
+        </div>
+      </Surface>
     </div>
   );
 
   const renderAnalytics = () => (
     <div className="space-y-3">
-      <div className="grid grid-cols-[0.9fr_1.1fr] gap-3">
-        <Surface className="p-4">
-          <div className="text-sm font-medium text-foreground">Signal score</div>
-          <div className="mt-3 text-3xl font-semibold text-foreground">87%</div>
-          <div className="mt-3 h-2 rounded-full bg-white/80">
-            <motion.div initial={{ width: 0 }} whileInView={{ width: "87%" }} viewport={{ once: true }} transition={{ duration: 0.55 }} className="h-2 rounded-full bg-primary/70" />
+      {/* Analytics Header */}
+      <Surface className="p-3">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2">
+            <div className="h-6 w-6 rounded bg-orange-500/20 flex items-center justify-center">
+              <BarChart3 className="h-4 w-4 text-orange-500" />
+            </div>
+            <div className="text-sm font-semibold text-foreground">Analytics</div>
           </div>
-          <div className="mt-4 grid grid-cols-2 gap-2">
-            <div className="rounded-[12px] bg-[#dcfce7] p-2">
-              <div className="text-[10px] text-text-secondary">Trend</div>
-              <div className="mt-1 text-sm font-semibold text-foreground">+14%</div>
-            </div>
-            <div className="rounded-[12px] bg-[#D2D7F8]/70 p-2">
-              <div className="text-[10px] text-text-secondary">Alerts</div>
-              <div className="mt-1 text-sm font-semibold text-foreground">3</div>
-            </div>
+        </div>
+        <div className="text-center">
+          <div className="text-2xl font-bold text-foreground">87%</div>
+          <div className="text-[10px] text-text-secondary">Signal Score</div>
+        </div>
+      </Surface>
+
+      {/* Charts Row */}
+      <div className="grid grid-cols-2 gap-3">
+        <Surface className="p-3">
+          <div className="mb-2 text-xs font-medium text-foreground">Weekly Trend</div>
+          <div className="h-12 rounded bg-gradient-to-r from-primary/10 to-secondary/20 mb-2">
+            <AnimatedSparkline />
+          </div>
+          <div className="flex justify-between text-[9px] text-text-secondary">
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
           </div>
         </Surface>
 
-        <Surface className="p-4">
-          <div className="mb-4 flex items-center justify-between">
-            <div className="text-sm font-medium text-foreground">Channel analysis</div>
-            <StatusPill text="Weekly" tone="secondary" />
-          </div>
-          <div className="grid grid-cols-5 items-end gap-2">
-            {chartHeights.slice(0, 5).map((height, index) => (
+        <Surface className="p-3">
+          <div className="mb-2 text-xs font-medium text-foreground">Channel Analysis</div>
+          <div className="flex items-end justify-between h-12 mb-2">
+            {[45, 68, 52, 78, 61].map((height, index) => (
               <motion.div
                 key={index}
-                className={`rounded-t-[10px] ${index % 2 === 0 ? "bg-[#D2D7F8]" : "bg-primary/18"}`}
+                className="w-4 rounded-t bg-primary/60"
                 initial={{ height: 0 }}
-                whileInView={{ height: `${height + 24}px` }}
+                whileInView={{ height: `${height}%` }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
+                transition={{ duration: 0.4, delay: index * 0.04 }}
               />
             ))}
           </div>
-          <div className="mt-4 flex items-center justify-between text-[10px] text-text-secondary">
-            {["Mon", "Tue", "Wed", "Thu", "Fri"].map((day) => (
-              <span key={day}>{day}</span>
-            ))}
+          <div className="grid grid-cols-2 gap-1">
+            <div className="text-[9px] text-text-secondary">Peak: 78%</div>
+            <div className="text-[9px] text-green-400">+14%</div>
           </div>
         </Surface>
       </div>
 
-      <div className="grid grid-cols-3 gap-3">
-        {["Traffic", "Retention", "Revenue"].map((item, index) => (
-          <Surface key={item} className="p-3">
-            <div className="text-[11px] text-text-secondary">{item}</div>
-            <div className="mt-1 text-lg font-semibold text-foreground">
-              {index === 0 ? "148k" : index === 1 ? "68%" : "$12.4k"}
-            </div>
-            <div className={`mt-3 rounded-[14px] p-3 ${index === 1 ? "bg-[#D2D7F8]/70" : "bg-primary/12"}`}>
-              <div className="h-8 rounded-[10px] bg-white/80" />
-              <div className="mt-2 h-2.5 rounded-full bg-white/80" />
-              <div className="mt-2 h-2.5 w-3/4 rounded-full bg-white/80" />
-            </div>
+      {/* Metrics Cards */}
+      <div className="grid grid-cols-3 gap-2">
+        {[
+          { label: "Traffic", value: "148k", icon: Users },
+          { label: "Retention", value: "68%", icon: TrendingUp },
+          { label: "Revenue", value: "$12.4k", icon: DollarSign },
+        ].map((item, index) => (
+          <Surface key={item.label} className="p-2">
+            <item.icon className="h-4 w-4 text-primary/60 mb-1 mx-auto" />
+            <div className="text-[9px] text-text-secondary">{item.label}</div>
+            <div className="text-sm font-semibold text-foreground">{item.value}</div>
           </Surface>
         ))}
       </div>
+
+      {/* Bottom Stats */}
+      <Surface className="p-3">
+        <div className="grid grid-cols-4 gap-2">
+          {[
+            { label: "Alerts", value: "3", icon: AlertTriangle },
+            { label: "Errors", value: "0", icon: XCircle },
+            { label: "Uptime", value: "99.9%", icon: Activity },
+            { label: "Response", value: "1.2s", icon: Clock },
+          ].map((item, index) => (
+            <div key={item.label} className="text-center">
+              <item.icon className="h-3 w-3 text-primary/60 mb-1 mx-auto" />
+              <div className="text-[9px] text-text-secondary">{item.label}</div>
+              <div className="text-xs font-semibold text-foreground">{item.value}</div>
+            </div>
+          ))}
+        </div>
+      </Surface>
     </div>
   );
 
   const renderStorefront = () => (
     <div className="space-y-3">
-      <div className="grid grid-cols-[1.05fr_0.95fr] gap-3">
-        <Surface className="overflow-hidden p-0">
-          <div className="border-b border-primary/20 px-4 py-3">
-            <div className="flex items-center justify-between">
-              <div className="h-4 w-20 rounded-full bg-primary/16" />
-              <div className="flex gap-2">
-                <div className="h-3 w-8 rounded-full bg-white/80" />
-                <div className="h-3 w-8 rounded-full bg-white/80" />
-                <div className="h-3 w-8 rounded-full bg-white/80" />
-              </div>
+      {/* Healthcare Header */}
+      <Surface className="p-3">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2">
+            <div className="h-6 w-6 rounded bg-red-500/20 flex items-center justify-center">
+              <Heart className="h-4 w-4 text-red-500" />
             </div>
+            <div className="text-sm font-semibold text-foreground">Medicore</div>
           </div>
-          <div className="p-4">
-            <div className="grid grid-cols-2 gap-3">
-              {[1, 2].map((item, index) => (
-                <div key={item} className="rounded-[16px] bg-white/80 p-3">
-                  <div className={`h-24 rounded-[12px] ${index === 0 ? "bg-[#D2D7F8]/62" : "bg-primary/14"}`} />
-                  <div className="mt-3 space-y-2">
-                    <TinyText className="w-full" />
-                    <TinyText className="w-2/3" />
-                  </div>
-                  <div className="mt-3 flex items-center justify-between">
-                    <div className="h-7 w-16 rounded-full bg-[#ecfccb]" />
-                    <div className="h-7 w-7 rounded-full bg-primary/12" />
-                  </div>
-                </div>
-              ))}
+        </div>
+        <div className="grid grid-cols-3 gap-2">
+          {[
+            { label: "Patients", value: "547", icon: Users },
+            { label: "Appointments", value: "23", icon: Calendar },
+            { label: "Rooms", value: "12/15", icon: Activity },
+          ].map((item, index) => (
+            <div key={item.label} className="rounded-lg bg-surface/50 p-2 text-center">
+              <item.icon className="h-4 w-4 text-primary/60 mb-1 mx-auto" />
+              <div className="text-[10px] text-text-secondary">{item.label}</div>
+              <div className="text-sm font-semibold text-foreground">{item.value}</div>
             </div>
+          ))}
+        </div>
+      </Surface>
+
+      {/* Patient Management */}
+      <div className="grid grid-cols-2 gap-3">
+        <Surface className="p-3">
+          <div className="mb-2 text-xs font-medium text-foreground">Today's Appointments</div>
+          <div className="space-y-2">
+            {[
+              { time: "9:00", patient: "John Doe", type: "Check-up" },
+              { time: "11:30", patient: "Jane Smith", type: "Consultation" },
+              { time: "2:15", patient: "Bob Wilson", type: "Follow-up" },
+            ].map((item, index) => (
+              <div key={index} className="flex items-center justify-between rounded bg-surface/50 p-2">
+                <div>
+                  <div className="text-xs font-medium text-foreground">{item.time}</div>
+                  <div className="text-[10px] text-text-secondary">{item.patient}</div>
+                </div>
+                <div className="text-[9px] text-blue-400">{item.type}</div>
+              </div>
+            ))}
           </div>
         </Surface>
 
-        <Surface className="p-4">
-          <div className="mb-3 flex items-center justify-between">
-            <div className="text-sm font-medium text-foreground">Cart summary</div>
-            <StatusPill text="3 items" />
-          </div>
-          <div className="space-y-3">
-            {[1, 2, 3].map((item, index) => (
-              <motion.div key={item} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: index * 0.05 }} className="flex items-center gap-3 rounded-[14px] bg-white/80 p-3">
-                <div className={`h-10 w-10 rounded-[10px] ${index === 1 ? "bg-[#D2D7F8]/70" : "bg-primary/14"}`} />
-                <div className="flex-1">
-                  <TinyText className="w-4/5" />
-                  <TinyText className="mt-2 w-1/2" />
+        <Surface className="p-3">
+          <div className="mb-2 text-xs font-medium text-foreground">Room Status</div>
+          <div className="space-y-2">
+            {[
+              { room: "101", status: "Occupied", patient: "John D." },
+              { room: "102", status: "Available", patient: "" },
+              { room: "103", status: "Cleaning", patient: "" },
+            ].map((item, index) => (
+              <div key={index} className="flex items-center justify-between rounded bg-surface/50 p-2">
+                <div>
+                  <div className="text-xs font-medium text-foreground">Room {item.room}</div>
+                  <div className="text-[10px] text-text-secondary">{item.patient || "Empty"}</div>
                 </div>
-                <div className="h-7 w-12 rounded-full bg-[#ecfccb]" />
-              </motion.div>
+                <div className={`text-[9px] px-1.5 py-0.5 rounded-full ${
+                  item.status === "Occupied" ? "bg-red-400/20 text-red-400" :
+                  item.status === "Available" ? "bg-green-400/20 text-green-400" :
+                  "bg-yellow-400/20 text-yellow-400"
+                }`}>
+                  {item.status}
+                </div>
+              </div>
             ))}
           </div>
         </Surface>
       </div>
 
-      <Surface className="p-4">
-        <div className="mb-4 flex items-center justify-between">
-          <div className="text-sm font-medium text-foreground">Featured products</div>
-          <StatusPill text="Updated" tone="secondary" />
+      {/* Medical Records & Stats */}
+      <Surface className="p-3">
+        <div className="mb-2 text-xs font-medium text-foreground">Patient Records</div>
+        <div className="grid grid-cols-2 gap-3 mb-3">
+          <div className="rounded bg-surface/50 p-2">
+            <div className="text-[10px] text-text-secondary">Recent Admissions</div>
+            <div className="text-lg font-semibold text-foreground">12</div>
+            <div className="text-[9px] text-green-400">+2 this week</div>
+          </div>
+          <div className="rounded bg-surface/50 p-2">
+            <div className="text-[10px] text-text-secondary">Avg. Stay</div>
+            <div className="text-lg font-semibold text-foreground">3.2</div>
+            <div className="text-[9px] text-text-secondary">days</div>
+          </div>
         </div>
-        <div className="grid grid-cols-3 gap-3">
-          {[1, 2, 3].map((item, index) => (
-            <motion.div key={item} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: index * 0.04 }} className="rounded-[14px] bg-white/80 p-3">
-              <div className={`h-16 rounded-[10px] ${index === 2 ? "bg-primary/14" : "bg-[#D2D7F8]/55"}`} />
-              <div className="mt-3 space-y-2">
-                <TinyText className="w-full" />
-                <TinyText className="w-2/3" />
-              </div>
-            </motion.div>
-          ))}
+        <div className="h-12 rounded bg-gradient-to-r from-blue-400/10 to-green-500/20">
+          <AnimatedSparkline />
         </div>
       </Surface>
     </div>
@@ -495,7 +565,7 @@ const BrowserWindowMockup = ({ type = "dashboard", title }) => {
     >
       <div className={`absolute -left-6 top-12 h-28 w-28 rounded-full ${palette.glowA} blur-3xl`} />
       <div className={`absolute -right-4 bottom-8 h-32 w-32 rounded-full ${palette.glowB} blur-3xl`} />
-      <div className="rounded-[22px] border border-primary/30 bg-white/58 p-4 backdrop-blur-xl">
+      <div className="rounded-[22px] border border-primary/30 bg-white/5 p-4 backdrop-blur-xl">
         <div className="mb-4 flex items-center justify-between border-b border-primary/20 pb-3">
           <div className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-[#dcfce7]" />

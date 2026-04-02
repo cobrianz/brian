@@ -47,7 +47,7 @@ const ContactPage = () => {
 
       <main className="px-4 pb-24 pt-10 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          <section className="relative overflow-hidden rounded-[20px] border border-border bg-white p-8 md:p-10">
+          <section className="relative overflow-hidden rounded-[20px] border border-border bg-card p-8 md:p-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -108,7 +108,7 @@ const ContactPage = () => {
                 <aside className="space-y-8">
                   <section>
                     <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-text-secondary">Best First Message</h2>
-                    <div className="mt-5 rounded-[16px] border border-border bg-[#f5fff6] p-5">
+                    <div className="mt-5 rounded-[16px] border border-border bg-surface p-5">
                       <p className="text-sm leading-7 text-foreground">
                         Include the role or project type, timeline, expected responsibilities, and whether the need is full-time, freelance, or short-term contract.
                       </p>
@@ -124,7 +124,7 @@ const ContactPage = () => {
                         "Frontend-heavy roles are the best fit",
                         "Can support full-stack implementation where needed",
                       ].map((item) => (
-                        <div key={item} className="flex gap-3 rounded-[16px] border border-border bg-white px-4 py-3">
+                        <div key={item} className="flex gap-3 rounded-[16px] border border-border bg-surface px-4 py-3">
                           <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-primary" />
                           <span className="text-sm leading-7 text-foreground">{item}</span>
                         </div>

@@ -30,14 +30,14 @@ const projectData = [
   },
   {
     id: 3,
-    title: "Actinova AI Tutor",
+    title: "Actirova AI Powered Tutor",
     category: "AI Learning Product",
     description:
       "An AI-assisted tutoring product built around guided learning, lightweight interaction, and a modern visual system. The experience was shaped to feel approachable while still carrying clear structure and depth.",
     stack: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
     metrics: ["MVP launched in 2 weeks", "5 guided learning flows", "Higher session depth"],
-    liveUrl: "https://actinovaraitutor.netlify.app/",
-    githubUrl: "https://github.com/cobrianz/actinova-ai-tutor",
+    liveUrl: "https://actirova.com",
+    githubUrl: null,
     mockupType: "mobile",
   },
   {
@@ -54,21 +54,21 @@ const projectData = [
   },
   {
     id: 5,
-    title: "GreenCart Storefront",
-    category: "E-commerce Build",
+    title: "Medicore Hospital System",
+    category: "Healthcare Management",
     description:
-      "A storefront concept built to test lightweight commerce flows, product discovery, and checkout clarity. The interface uses soft surfaces and structured content to keep browsing and buying friction low.",
-    stack: ["React", "TypeScript", "Stripe", "Framer Motion"],
-    metrics: ["28% checkout lift", "3-step purchase flow", "Responsive from day one"],
-    liveUrl: "https://example.com/greencart",
-    githubUrl: "https://github.com/cobrianz",
+      "A comprehensive hospital management system designed for efficient patient care, appointment scheduling, and medical record management. Built with modern web technologies to ensure scalability and user-friendly interfaces.",
+    stack: ["React", "Node.js", "MongoDB", "Express"],
+    metrics: ["500+ patients managed", "99% uptime", "Streamlined workflows"],
+    liveUrl: "https://medcore-chi.vercel.app/",
+    githubUrl: null,
     mockupType: "storefront",
   },
 ];
 
 const PortfolioProjectsSection = () => {
   return (
-    <section className="relative overflow-hidden bg-[#fbfffb] py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-background py-16 lg:py-24">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-[8%] top-24 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute right-[10%] top-[30%] h-48 w-48 rounded-full bg-[#D2D7F8]/60 blur-3xl" />
@@ -95,7 +95,7 @@ const PortfolioProjectsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.55 }}
-                className={`flex flex-col gap-10 lg:items-center ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}
+                className={`flex flex-col gap-10 lg:items-start ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}
               >
                 <motion.div
                   initial={{ opacity: 0, x: reverse ? 24 : -24 }}
@@ -104,7 +104,7 @@ const PortfolioProjectsSection = () => {
                   transition={{ duration: 0.5, delay: 0.08 }}
                   className="w-full lg:w-[46%]"
                 >
-                  <div className="rounded-[24px] border border-white/50 bg-white/68 p-7 backdrop-blur-xl">
+                  <div className="rounded-[24px] bg-surface/70 p-7 backdrop-blur-xl">
                     <p className="text-xs font-medium uppercase tracking-[0.24em] text-primary">
                       Case Study {String(index + 1).padStart(2, "0")}
                     </p>
@@ -126,7 +126,7 @@ const PortfolioProjectsSection = () => {
                         <motion.span
                           key={item}
                           variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }}
-                          className="rounded-full border border-white/40 bg-white/70 px-3 py-1 text-sm text-foreground"
+                          className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-foreground"
                         >
                           {item}
                         </motion.span>
@@ -160,11 +160,13 @@ const PortfolioProjectsSection = () => {
                           View Project
                         </Button>
                       </a>
-                      <a href={project.githubUrl} target="_blank" rel="noreferrer">
-                        <Button variant="outline" className="rounded-[18px] bg-white/70" iconName="Github" iconPosition="left">
-                          Source Code
-                        </Button>
-                      </a>
+                      {project.githubUrl && (
+                        <a href={project.githubUrl} target="_blank" rel="noreferrer">
+                          <Button variant="outline" className="rounded-[18px] bg-white/5" iconName="Github" iconPosition="left">
+                            Source Code
+                          </Button>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </motion.div>

@@ -81,7 +81,7 @@ const ResumePage = () => {
             </a>
           </div>
 
-          <section className="relative overflow-hidden rounded-[20px] border border-border bg-white p-8 md:p-10">
+          <section className="relative overflow-hidden rounded-[20px] border border-border bg-card p-8 md:p-10">
             <header className="border-b border-border pb-8">
               <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                 <div>
@@ -172,7 +172,7 @@ const ResumePage = () => {
                       "Product UI polish",
                       "Professional presentation",
                     ].map((item) => (
-                      <div key={item} className="rounded-[14px] border border-border bg-[#f5fff6] px-4 py-3 text-sm text-foreground">
+                      <div key={item} className="rounded-[14px] border border-border bg-surface px-4 py-3 text-sm text-foreground">
                         {item}
                       </div>
                     ))}

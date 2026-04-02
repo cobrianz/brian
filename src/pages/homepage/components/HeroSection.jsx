@@ -38,7 +38,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative h-[calc(100vh-5rem)] max-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden bg-background">
+    <section className="relative h-[calc(100vh-5rem)] max-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden bg-black hero-grid-bg dark:bg-black pt-16 sm:pt-20">
       {/* Custom Cursor */}
       <div
         className="fixed w-6 h-6 bg-primary/20 rounded-full pointer-events-none z-50 transition-all duration-300 ease-out"
@@ -49,8 +49,8 @@ const HeroSection = () => {
         }}
       />
 
-      <div className="absolute inset-0 overflow-hidden bg-background">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,197,94,0.06),transparent_24%),radial-gradient(circle_at_80%_30%,rgba(210,215,248,0.32),transparent_26%),radial-gradient(circle_at_50%_80%,rgba(255,255,255,0.7),transparent_28%)]" />
+      <div className="absolute inset-0 overflow-hidden bg-black/70">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(78,204,163,0.18),transparent_26%),radial-gradient(circle_at_80%_30%,rgba(38,45,61,0.28),transparent_30%),radial-gradient(circle_at_50%_80%,rgba(16,20,32,0.6),transparent_32%)]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -190,11 +190,7 @@ const HeroSection = () => {
           >
             {/* Profile Image */}
             <div className="relative mb-8">
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 bg-gradient-brand rounded-full opacity-20 blur-xl"
-              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-secondary/10 opacity-40 blur-xl" />
               <div className="relative w-80 h-80 mx-auto">
                 <div className="w-full h-full rounded-full overflow-hidden border-4 border-primary/20 shadow-premium-strong">
                   <Image
